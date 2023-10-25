@@ -17,16 +17,13 @@ const blockLogIn = document.querySelector(".block__login");
 logIn.addEventListener("click", () => {
   toggleElenment(blockLogIn, "active");
 });
-
 // toggle sign up
 const signUp = document.querySelector(".signUp__btn");
 const blogSignUp = document.querySelector(".block__signUp");
 signUp.addEventListener("click", () => {
   toggleElenment(blogSignUp, "active");
 });
-
 // toggle exit log in
-
 header.addEventListener("click", (e) => {
   if (e.target !== blockLogIn && e.target !== logIn) {
     blockLogIn.classList.add("unactive");
