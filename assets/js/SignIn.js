@@ -221,3 +221,17 @@ btnLogOut.addEventListener("click", () => {
     window.location.href = "../home/index.html";
   }
 });
+// toggle exit log out
+header.addEventListener("click", (e) => {
+  if (e.target !== blockLogOut && e.target !== btnLogOut && e.target !== btnSignout) {
+    blockLogOut.classList.add("unactive");
+    blockLogOut.classList.remove("active");
+  }
+});
+
+main.addEventListener("click", (e) => {
+  if (e.target !== blockLogOut && e.target !== btnLogOut && e.target !== btnSignout ) {
+    blockLogOut.classList.add("unactive");
+    blockLogOut.classList.remove("active");
+  }
+});

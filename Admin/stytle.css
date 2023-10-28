@@ -1,0 +1,26 @@
+.container__manager {
+    margin-top: 12rem;
+    width: 40%;
+}
+.item__manager {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ccc;
+    cursor: pointer;
+}
+.item__manager:hover {
+    transform: scale(1.2);
+}
+.item__manager__active {
+    color: red;
+    position: relative;
+}
+.item__manager__active::after {
+    content: "";
+    position: absolute;
+    background: red;
+    width: 100%;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+}

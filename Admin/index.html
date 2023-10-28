@@ -17,6 +17,7 @@
         rel="stylesheet">
     <!-- header -->
     <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="./stytle.css">
 </head>
 
 <body>
@@ -42,17 +43,19 @@
             <div class="signIn">
                 <div class="signIn__wrap">
                     <div class="logIn">Log In</div>
-                <div class="signUp">
-                    <button class="signUp__btn btn">
-                        Sign Up
-                    </button>
-                </div>
+                    <div class="signUp">
+                        <button class="signUp__btn btn">
+                            Sign Up
+                        </button>
+                    </div>
                 </div>
             </div>
+
             <div class="user">
                 <div class="user__wrap row">
                     <span class="user__name"></span>
                     <img src="../assets/img/user-Img.png" alt="" class="user__img">
+                    <img src="../assets/img/img__cart.png" alt="" class="cart__img">
                     <img src="../assets/img/signOut-icon.png" alt="" class="sign__out">
                 </div>
             </div>
@@ -107,8 +110,8 @@
             </form>
         </div>
     </div>
-     <!-- block out -->
-     <div class="block__logOut unactive">
+    <!-- block out -->
+    <div class="block__logOut unactive">
         <div class="block__logOut__wrap">
             <h1 class="block__logOut__title">
                 Do you want to sign out of your account?
@@ -120,10 +123,17 @@
         </div>
     </div>
     <main class="main">
-
+        <div class="heading__manager content">
+            <ul class="container__manager row">
+                <li class="item__manager item__manager__active ">User</li>
+                <li class="item__manager">Product</li>
+                <li class="item__manager">Order</li>
+            </ul>
+        </div>
     </main>
 
     <script src="../assets/js/SignIn.js"></script>
+    <script src="./Script.js"></script>
 </body>
 
 </html>
