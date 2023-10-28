@@ -1,3 +1,4 @@
+
 const header = document.querySelector(".header");
 const main = document.querySelector(".main");
 // toggle Element
@@ -72,7 +73,7 @@ function testInput(className, value) {
 const listAdmins = [
   {
     name: "ADMIN",
-    phone: "0378308976",
+    phone: "0123456789",
     pass: "123",
     isAdmin: true,
   },

@@ -24,3 +24,40 @@
     bottom: -2px;
     left: 0;
 }
+.table {
+    margin-top: 10rem;
+    font-size: 3rem;
+    color: #ccc;
+    border: 1px solid #000;
+}
+.table__header_row {
+   background: #201980;
+  
+}
+tr,td {
+    border: 1px solid #000;
+    padding: 1rem;
+    color: #000;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+.table__header_col {
+   padding: 2rem;
+   border: 1px solid #ccc;
+   color: #ccc;
+   
+}
+.active {
+    display: block;
+}
+.unactive {
+    display: none;
+}
+.img__delete {
+    width: 3rem;
+    cursor: pointer;
+}
+.img__delete:hover {
+    transform: scale(1.2);
+}

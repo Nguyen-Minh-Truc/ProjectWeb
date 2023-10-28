@@ -125,15 +125,58 @@
     <main class="main">
         <div class="heading__manager content">
             <ul class="container__manager row">
-                <li class="item__manager item__manager__active ">User</li>
-                <li class="item__manager">Product</li>
-                <li class="item__manager">Order</li>
+                <li class="item__manager managerUser item__manager__active ">User</li>
+                <li class="item__manager managerProduct">Product</li>
+                <li class="item__manager managerOrder">Order</li>
             </ul>
+        </div>
+        <!-- user -->
+        <div class="table__user table__wrap active">
+            <table class="table content">
+                <tr class="table__header_row">
+                    <th class="table__header_col">Name User</th>
+                    <th class="table__header_col">Phone</th>
+                    <th class="table__header_col">position</th>
+                    <th class="table__header_col">edit</th>
+                </tr>
+                <tbody class="listUsers">
+    
+                </tbody>
+            </table>
+        </div>
+        <!-- product -->
+        <div class="table__Product table__wrap unactive">
+            <table class="table content">
+                <tr class="table__header_row">
+                    <th class="table__header_col">ID</th>
+                    <th class="table__header_col">Product</th>
+                    <th class="table__header_col">Name</th>
+                    <th class="table__header_col">Price</th>
+                    <th class="table__header_col">edit</th>
+                </tr>
+                <tbody>
+    
+                </tbody>
+            </table>
+        </div>
+        <!-- oder -->
+        <div class="table__order table__wrap unactive">
+            <table class="table content">
+                <tr class="table__header_row">
+                    <th class="table__header_col">Name User</th>
+                    <th class="table__header_col">Name Product</th>
+                    <th class="table__header_col">Accept</th>
+                    <th class="table__header_col">Cancle</th>
+                </tr>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </main>
 
     <script src="../assets/js/SignIn.js"></script>
     <script src="./Script.js"></script>
+    <script src="./ManagerUser.js"></script>
 </body>
 
 </html>
