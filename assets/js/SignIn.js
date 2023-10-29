@@ -110,6 +110,7 @@ formSignUp.addEventListener("submit", (e) => {
           };
           listUsers.push(user);
           localStorage.setItem("listUsers", JSON.stringify(listUsers));
+          formSignUp.reset();
           toggleElenment(blogSignUp, "active");
         }
       } else {
@@ -160,6 +161,7 @@ formLogIn.addEventListener("submit", (e) => {
       toggleElenment(blockLogIn, "active");
       testLogin();
     } else {
+      formLogIn.reset();
       alert("Tài khoản hoặc mật khẩu sai");
     }
   }

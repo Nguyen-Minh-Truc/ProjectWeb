@@ -1,14 +1,13 @@
 import { listProductData } from "../data/listProduct.js";
-
 const Product = {
   addProduct: function () {},
 };
-
 const listProducts =JSON.parse(localStorage.getItem("listProducts")) || listProductData;
 localStorage.setItem("listProducts", JSON.stringify(listProducts));
-function upDateProduct() {
+
+function upDateProduct(listProducts) {
   const listProduct = $(".listProduct");
-  listProduct.innerHTML = "";
+  listProduct.innerHTML = " ";
   const productElemnets = listProducts.map((product, i) => {
     const trProduct = document.createElement("tr");
     trProduct.appendChild(newTd("IDProduct", i + 1));
@@ -22,7 +21,7 @@ function upDateProduct() {
     listProduct.appendChild(productElemnet);
   });
 }
-upDateProduct();
+upDateProduct(listProducts);
 
 // create td
 function newTd(className, value) {
@@ -58,18 +57,21 @@ function newProduct(linkimg) {
   return td;
 }
 
-const edits = document.querySelectorAll(".img__delete__product");
+function refreshEdits() {
+    const edits = document.querySelectorAll(".img__delete__product");
+    edits.forEach((edit, i) => {
+      edit.addEventListener("click", (e) => {
+        deleteProduct(listProducts, i);
+      });
+    });
+  }
+  refreshEdits(); 
+  
 
-edits.forEach((edit, i) => {
-  edit.setAttribute("data-index", i);
-  edit.addEventListener("click", (e) => {
-    const index = e.target.getAttribute("data-index"); // Lấy chỉ số từ thuộc tính tùy chỉnh
-    if (index !== null) {
-      listProducts.splice(index, 1);
-  
-      localStorage.setItem("listProducts", JSON.stringify(listProducts));
-  
-      upDateProduct(listProducts);
-    }
-  });
-});
+
+  function deleteProduct(listProducts, i) {
+    listProducts.splice(i, 1);
+    localStorage.setItem("listProducts", JSON.stringify(listProducts));
+    upDateProduct(listProducts);
+    refreshEdits(); 
+  }
