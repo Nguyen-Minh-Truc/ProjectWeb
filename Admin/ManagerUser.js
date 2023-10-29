@@ -11,7 +11,7 @@ function newTd(className, value) {
     const deleteIcon = document.createElement("img");
     deleteIcon.src = "../assets/img/img__delete.png";
     deleteIcon.alt = "Xoá";
-    deleteIcon.classList.add("img__delete");
+    deleteIcon.classList.add("img__delete__user");
     td.appendChild(deleteIcon);
     return td;
   }
@@ -35,7 +35,7 @@ function newTd(className, value) {
   updateUser(listUsers);
   
   function deleteUser(listUsers) {
-    const edits = document.querySelectorAll(".img__delete");
+    const edits = document.querySelectorAll(".img__delete__user");
     edits.forEach((edit, i) => {
       edit.addEventListener("click", () => {
         if (!listUsers[i].isAdmin) {

@@ -41,6 +41,7 @@ tr,td {
     font-size: 2rem;
     font-weight: 400;
     text-align: center;
+    vertical-align: middle;
 }
 .table__header_col {
    padding: 2rem;
@@ -54,10 +55,14 @@ tr,td {
 .unactive {
     display: none;
 }
-.img__delete {
+.img__delete__user,.img__delete__product, .img__edit {
     width: 3rem;
     cursor: pointer;
+    margin: 0.7rem;
 }
-.img__delete:hover {
+.img__delete__user:hover,.img__delete__product:hover, .img__edit:hover {
     transform: scale(1.2);
+}
+.img__product {
+    width: 5rem;
 }

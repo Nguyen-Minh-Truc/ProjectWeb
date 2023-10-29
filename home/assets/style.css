@@ -4,14 +4,5 @@
     background-image: url(../assets/img/img__bg.webp) ;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-top: 10rem;
-}
-.heading__title {
-    width: 30%;
-    color: red;
-    font-size: 5rem;
-    margin-top: 10rem;
-}
-.title__heading {
-    font-size: 20rem;
+    margin-top: 7rem;
 }
