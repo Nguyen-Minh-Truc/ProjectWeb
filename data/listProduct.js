@@ -1,5 +1,5 @@
-export {listProductData}
-const listProductData = [
+
+ export const listProductData = [
     {
         id : 1,
         url : "../assets/img/listProduct/product_1.webp",   

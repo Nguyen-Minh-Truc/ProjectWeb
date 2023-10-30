@@ -58,20 +58,45 @@ function newProduct(linkimg) {
 }
 
 function refreshEdits() {
-    const edits = document.querySelectorAll(".img__delete__product");
-    edits.forEach((edit, i) => {
-      edit.addEventListener("click", (e) => {
-        deleteProduct(listProducts, i);
-      });
+  const edits = document.querySelectorAll(".img__delete__product");
+  edits.forEach((edit, i) => {
+    edit.addEventListener("click", (e) => {
+      deleteProduct(listProducts, i);
     });
-  }
-  refreshEdits(); 
-  
+  });
+}
+refreshEdits();
 
+function deleteProduct(listProducts, i) {
+  listProducts.splice(i, 1);
+  localStorage.setItem("listProducts", JSON.stringify(listProducts));
+  upDateProduct(listProducts);
+  refreshEdits();
+}
+// add product
+function addProduct() {
+  const src = document.getElementById("src__product").value;
+  const nameProduct = document.getElementById("name__product").value;
+  const price = parseFloat(document.getElementById("price__product").value);
 
-  function deleteProduct(listProducts, i) {
-    listProducts.splice(i, 1);
+  if (!src || !nameProduct || !price) {
+    alert("Vui lòng nhập đủ thông tin.");
+  } else {
+    const product = {
+      id: listProducts.length,
+      url: src,
+      name: nameProduct,
+      price,
+    };
+    listProducts.push(product);
     localStorage.setItem("listProducts", JSON.stringify(listProducts));
     upDateProduct(listProducts);
-    refreshEdits(); 
+    refreshEdits();
   }
+}
+
+const btnAddProduct = $(".btn__add");
+btnAddProduct.addEventListener("click", () => {
+  addProduct();
+});
+
