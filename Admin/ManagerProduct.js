@@ -2,7 +2,8 @@ import { listProductData } from "../data/listProduct.js";
 const Product = {
   addProduct: function () {},
 };
-const listProducts =JSON.parse(localStorage.getItem("listProducts")) || listProductData;
+const listProducts =
+  JSON.parse(localStorage.getItem("listProducts")) || listProductData;
 localStorage.setItem("listProducts", JSON.stringify(listProducts));
 
 function upDateProduct(listProducts) {
@@ -57,22 +58,44 @@ function newProduct(linkimg) {
   return td;
 }
 
+// toggle Element
+function toggleElenment(element, className) {
+  const testClass = element.classList.contains("unactive");
+  if (testClass) {
+    element.classList.remove("unactive");
+    element.classList.add(className);
+  } else {
+    element.classList.add("unactive");
+    element.classList.remove(className);
+  }
+}
+// block delete
+const blockDeleteProduct = $(".block__deletePoduct");
+
 function refreshEdits() {
-  const edits = document.querySelectorAll(".img__delete__product");
+  const edits = $$(".img__delete__product");
   edits.forEach((edit, i) => {
     edit.addEventListener("click", (e) => {
-      deleteProduct(listProducts, i);
+      toggleElenment(blockDeleteProduct, "active");
+      $(".btn__deletePoduct").addEventListener("click", () => {
+        deleteProduct(listProducts, i);
+      });
     });
   });
 }
-refreshEdits();
-
 function deleteProduct(listProducts, i) {
   listProducts.splice(i, 1);
   localStorage.setItem("listProducts", JSON.stringify(listProducts));
   upDateProduct(listProducts);
+  toggleElenment(blockDeleteProduct, "active");
   refreshEdits();
 }
+refreshEdits();
+const btnCancleDelete = $(".btn__cancle__deletePoduct")
+btnCancleDelete.addEventListener("click", () => {toggleElenment(blockDeleteProduct, "active")});
+
+// out block delete
+
 // add product
 function addProduct() {
   const src = document.getElementById("src__product").value;
@@ -100,3 +123,49 @@ btnAddProduct.addEventListener("click", () => {
   addProduct();
 });
 
+// search Product
+function searchProduct() {
+  const keyWord = chuyenChuoiInHoaKhongDau(
+    document.getElementById("search__product").value
+  );
+  const listProducts = JSON.parse(localStorage.getItem("listProducts"));
+  const listProductResult = [];
+
+  if (!keyWord) {
+    upDateProduct(listProducts);
+    return;
+  } else {
+    let result = false;
+
+    for (let i = 0; i < listProducts.length; i++) {
+      const product =
+        chuyenChuoiInHoaKhongDau(listProducts[i].name) &&
+        chuyenChuoiInHoaKhongDau(listProducts[i].price);
+
+      if (product.indexOf(keyWord) !== -1) {
+        listProductResult.push(listProducts[i]);
+        result = true;
+      }
+    }
+
+    if (result) {
+      upDateProduct(listProductResult);
+      document.getElementById("search__product").value = "";
+    } else {
+      alert("Không tìm thấy sản phẩm");
+      document.getElementById("search__product").value = "";
+    }
+  }
+}
+$(".btn__search").addEventListener("click", () => {
+  searchProduct();
+  refreshEdits();
+});
+
+function chuyenChuoiInHoaKhongDau(chuoi) {
+  // Loại bỏ dấu và chuyển thành chữ thường
+  return chuoi
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
