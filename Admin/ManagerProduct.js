@@ -91,8 +91,10 @@ function deleteProduct(listProducts, i) {
   refreshEdits();
 }
 refreshEdits();
-const btnCancleDelete = $(".btn__cancle__deletePoduct")
-btnCancleDelete.addEventListener("click", () => {toggleElenment(blockDeleteProduct, "active")});
+const btnCancleDelete = $(".btn__cancle__deletePoduct");
+btnCancleDelete.addEventListener("click", () => {
+  toggleElenment(blockDeleteProduct, "active");
+});
 
 // out block delete
 
@@ -139,9 +141,7 @@ function searchProduct() {
 
     for (let i = 0; i < listProducts.length; i++) {
       const product =
-        chuyenChuoiInHoaKhongDau(listProducts[i].name) &&
-        chuyenChuoiInHoaKhongDau(listProducts[i].price);
-
+        chuyenChuoiInHoaKhongDau(listProducts[i].name)
       if (product.indexOf(keyWord) !== -1) {
         listProductResult.push(listProducts[i]);
         result = true;
