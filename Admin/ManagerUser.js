@@ -1,3 +1,4 @@
+
 // create td
 function newTd(className, value) {
   var td = document.createElement("td");

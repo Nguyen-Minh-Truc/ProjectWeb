@@ -1,6 +1,5 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
 const itemManager = $$(".item__manager");
 
 itemManager.forEach((item) => {

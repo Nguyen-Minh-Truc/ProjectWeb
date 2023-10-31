@@ -1,7 +1,5 @@
 import { listProductData } from "../data/listProduct.js";
-const Product = {
-  addProduct: function () {},
-};
+
 const listProducts =
   JSON.parse(localStorage.getItem("listProducts")) || listProductData;
 localStorage.setItem("listProducts", JSON.stringify(listProducts));
@@ -75,29 +73,29 @@ const blockDeleteProduct = $(".block__deletePoduct");
 function refreshEdits() {
   const edits = $$(".img__delete__product");
   edits.forEach((edit, i) => {
-    edit.addEventListener("click", (e) => {
+    edit.addEventListener("click", () => {
       toggleElenment(blockDeleteProduct, "active");
-      $(".btn__deletePoduct").addEventListener("click", () => {
-        deleteProduct(listProducts, i);
-      });
+      deleteProduct(listProducts, i);
     });
   });
 }
-function deleteProduct(listProducts, i) {
-  listProducts.splice(i, 1);
-  localStorage.setItem("listProducts", JSON.stringify(listProducts));
-  upDateProduct(listProducts);
-  toggleElenment(blockDeleteProduct, "active");
-  refreshEdits();
-}
 refreshEdits();
+
+function deleteProduct(listProducts, i) {
+  $(".btn__deletePoduct").addEventListener("click", () => {
+    listProducts.splice(i, 1);
+    localStorage.setItem("listProducts", JSON.stringify(listProducts));
+    upDateProduct(listProducts);
+    toggleElenment(blockDeleteProduct, "active");
+    refreshEdits();
+  });
+}
+
+// out block delete
 const btnCancleDelete = $(".btn__cancle__deletePoduct");
 btnCancleDelete.addEventListener("click", () => {
   toggleElenment(blockDeleteProduct, "active");
 });
-
-// out block delete
-
 // add product
 function addProduct() {
   const src = document.getElementById("src__product").value;
@@ -140,8 +138,7 @@ function searchProduct() {
     let result = false;
 
     for (let i = 0; i < listProducts.length; i++) {
-      const product =
-        chuyenChuoiInHoaKhongDau(listProducts[i].name)
+      const product = chuyenChuoiInHoaKhongDau(listProducts[i].name);
       if (product.indexOf(keyWord) !== -1) {
         listProductResult.push(listProducts[i]);
         result = true;
@@ -154,6 +151,7 @@ function searchProduct() {
     } else {
       alert("Không tìm thấy sản phẩm");
       document.getElementById("search__product").value = "";
+     
     }
   }
 }
@@ -162,10 +160,46 @@ $(".btn__search").addEventListener("click", () => {
   refreshEdits();
 });
 
-function chuyenChuoiInHoaKhongDau(chuoi) {
-  // Loại bỏ dấu và chuyển thành chữ thường
-  return chuoi
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+
+
+// edit product
+
+const editIcons = document.querySelectorAll('.img__edit');
+editIcons.forEach((editIcon, index) => {
+  editIcon.addEventListener('click', () => {
+    editProduct(index);
+  });
+});
+const formProduct = $(".form_product__wrap")
+
+function editProduct(index) {
+  const editingProductIndex = index;
+  const product = listProducts[index];
+
+  document.getElementById('src__product').value = product.url;
+  document.getElementById('name__product').value = product.name;
+  document.getElementById('price__product').value = product.price;
+  const btnUpdate = $(".btn__edit")
+  btnUpdate.addEventListener('click', () => {
+    if (editingProductIndex !== -1) {
+      const src = document.getElementById('src__product').value;
+      const nameProduct = document.getElementById('name__product').value;
+      const price = document.getElementById('price__product').value;
+  
+      if (!src || !nameProduct || isNaN(price)) {
+        alert('Vui lòng nhập đủ thông tin và giá sản phẩm hợp lệ.');
+      } else {
+        listProducts[editingProductIndex] = {
+          url: src,
+          name: nameProduct,
+          price: price,
+        };
+        upDateProduct(listProducts)
+        localStorage.setItem("listProducts",JSON.stringify(listProducts))
+        formProduct.reset() 
+        editingProductIndex = -1;
+      }
+    }
+  });
+  
 }
