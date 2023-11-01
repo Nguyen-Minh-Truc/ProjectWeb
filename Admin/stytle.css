@@ -87,6 +87,7 @@ tr,td {
     align-items: center;
     justify-content:end;
     gap: 2rem;
+    margin-bottom: 1rem;
 }
 .form__control {
     border-radius: 0.6rem;

@@ -69,27 +69,30 @@ function toggleElenment(element, className) {
 }
 // block delete
 const blockDeleteProduct = $(".block__deletePoduct");
+const listProduct = $(".listProduct");
 
-function refreshEdits() {
-  const edits = $$(".img__delete__product");
-  edits.forEach((edit, i) => {
-    edit.addEventListener("click", () => {
+listProduct.addEventListener("click", (event) => {
+  const target = event.target;
+  if (target.classList.contains("img__delete__product")) {
+    toggleElenment(blockDeleteProduct, "active");
+    const deleteButton = $(".btn__deletePoduct");
+    deleteButton.addEventListener("click", () => {
+      const productRow = target.closest("tr");
+      const index = Array.from(productRow.parentNode.children).indexOf(productRow);
+      deleteProduct(listProducts, index);
       toggleElenment(blockDeleteProduct, "active");
-      deleteProduct(listProducts, i);
     });
-  });
-}
-refreshEdits();
+  }
+});
 
 function deleteProduct(listProducts, i) {
-  $(".btn__deletePoduct").addEventListener("click", () => {
-    listProducts.splice(i, 1);
-    localStorage.setItem("listProducts", JSON.stringify(listProducts));
-    upDateProduct(listProducts);
-    toggleElenment(blockDeleteProduct, "active");
-    refreshEdits();
-  });
+  listProducts.splice(i, 1);
+  localStorage.setItem("listProducts", JSON.stringify(listProducts));
+  upDateProduct(listProducts);
+  refreshEdits();
 }
+
+
 
 // out block delete
 const btnCancleDelete = $(".btn__cancle__deletePoduct");
@@ -114,6 +117,7 @@ function addProduct() {
     listProducts.push(product);
     localStorage.setItem("listProducts", JSON.stringify(listProducts));
     upDateProduct(listProducts);
+    formProduct.reset() 
     refreshEdits();
   }
 }
@@ -125,9 +129,7 @@ btnAddProduct.addEventListener("click", () => {
 
 // search Product
 function searchProduct() {
-  const keyWord = chuyenChuoiInHoaKhongDau(
-    document.getElementById("search__product").value
-  );
+  const keyWord = chuyenChuoiInHoaKhongDau(document.getElementById("search__product").value);
   const listProducts = JSON.parse(localStorage.getItem("listProducts"));
   const listProductResult = [];
 
@@ -170,6 +172,7 @@ editIcons.forEach((editIcon, index) => {
     editProduct(index);
   });
 });
+
 const formProduct = $(".form_product__wrap")
 
 function editProduct(index) {
@@ -179,6 +182,7 @@ function editProduct(index) {
   document.getElementById('src__product').value = product.url;
   document.getElementById('name__product').value = product.name;
   document.getElementById('price__product').value = product.price;
+
   const btnUpdate = $(".btn__edit")
   btnUpdate.addEventListener('click', () => {
     if (editingProductIndex !== -1) {
