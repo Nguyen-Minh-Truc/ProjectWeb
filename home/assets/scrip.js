@@ -12,7 +12,17 @@ function createListProduct() {
                 </div>
             </li>`
   });
-
   container.innerHTML = product.join('');
 }
 createListProduct()
+
+
+const itemMenu = document.querySelectorAll(".item__menu");
+itemMenu.forEach((item) => {
+  item.addEventListener("click", () => {
+    itemMenu.forEach((item) => {
+      item.classList.remove("item__menu__active");
+    });
+    item.classList.add("item__menu__active");
+  });
+});
