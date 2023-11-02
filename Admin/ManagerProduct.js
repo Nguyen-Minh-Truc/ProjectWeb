@@ -161,9 +161,40 @@ $(".btn__search").addEventListener("click", () => {
   searchProduct();
   refreshEdits();
 });
+const inputSearch = document.getElementById("search__product")
 
+inputSearch.addEventListener("change",()=> {
+  const keyWord = chuyenChuoiInHoaKhongDau(document.getElementById("search__product").value);
+  const listProducts = JSON.parse(localStorage.getItem("listProducts"));
+  const listProductResult = [];
 
+  if (!keyWord) {
+    upDateProduct(listProducts);
+    return;
+  } else {
+    let result = false;
 
+    for (let i = 0; i < listProducts.length; i++) {
+      const product = chuyenChuoiInHoaKhongDau(listProducts[i].name);
+      if (product.indexOf(keyWord) !== -1) {
+        listProductResult.push(listProducts[i]);
+        result = true;
+      }
+    }
+
+    if (result) {
+      upDateProduct(listProductResult);
+      document.getElementById("search__product").value = "";
+    }
+  }
+})
+
+function chuyenChuoiInHoaKhongDau(chuoi) {
+  return chuoi
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
 // edit product
 
 const editIcons = document.querySelectorAll('.img__edit');
