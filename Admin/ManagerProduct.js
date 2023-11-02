@@ -1,9 +1,6 @@
 import { listProductData } from "../data/listProduct.js";
-
-const listProducts =
-  JSON.parse(localStorage.getItem("listProducts")) || listProductData;
+const listProducts =JSON.parse(localStorage.getItem("listProducts")) || listProductData;
 localStorage.setItem("listProducts", JSON.stringify(listProducts));
-
 function upDateProduct(listProducts) {
   const listProduct = $(".listProduct");
   listProduct.innerHTML = " ";
@@ -12,7 +9,7 @@ function upDateProduct(listProducts) {
     trProduct.appendChild(newTd("IDProduct", i + 1));
     trProduct.appendChild(newProduct(product.url));
     trProduct.appendChild(newTd("nameProduct", product.name));
-    trProduct.appendChild(newTd("priceProduct", product.price));
+    trProduct.appendChild(newTd("priceProduct", `${product.price}$`));
     trProduct.appendChild(newEditTd());
     return trProduct;
   });
@@ -78,7 +75,9 @@ listProduct.addEventListener("click", (event) => {
     const deleteButton = $(".btn__deletePoduct");
     deleteButton.addEventListener("click", () => {
       const productRow = target.closest("tr");
-      const index = Array.from(productRow.parentNode.children).indexOf(productRow);
+      const index = Array.from(productRow.parentNode.children).indexOf(
+        productRow
+      );
       deleteProduct(listProducts, index);
       toggleElenment(blockDeleteProduct, "active");
     });
@@ -92,8 +91,6 @@ function deleteProduct(listProducts, i) {
   refreshEdits();
 }
 
-
-
 // out block delete
 const btnCancleDelete = $(".btn__cancle__deletePoduct");
 btnCancleDelete.addEventListener("click", () => {
@@ -103,7 +100,7 @@ btnCancleDelete.addEventListener("click", () => {
 function addProduct() {
   const src = document.getElementById("src__product").value;
   const nameProduct = document.getElementById("name__product").value;
-  const price = parseFloat(document.getElementById("price__product").value);
+  const price = document.getElementById("price__product").value;
 
   if (!src || !nameProduct || !price) {
     alert("Vui lòng nhập đủ thông tin.");
@@ -117,7 +114,7 @@ function addProduct() {
     listProducts.push(product);
     localStorage.setItem("listProducts", JSON.stringify(listProducts));
     upDateProduct(listProducts);
-    formProduct.reset() 
+    formProduct.reset();
     refreshEdits();
   }
 }
@@ -129,7 +126,9 @@ btnAddProduct.addEventListener("click", () => {
 
 // search Product
 function searchProduct() {
-  const keyWord = chuyenChuoiInHoaKhongDau(document.getElementById("search__product").value);
+  const keyWord = chuyenChuoiInHoaKhongDau(
+    document.getElementById("search__product").value
+  );
   const listProducts = JSON.parse(localStorage.getItem("listProducts"));
   const listProductResult = [];
 
@@ -153,7 +152,6 @@ function searchProduct() {
     } else {
       alert("Không tìm thấy sản phẩm");
       document.getElementById("search__product").value = "";
-     
     }
   }
 }
@@ -161,10 +159,12 @@ $(".btn__search").addEventListener("click", () => {
   searchProduct();
   refreshEdits();
 });
-const inputSearch = document.getElementById("search__product")
+const inputSearch = document.getElementById("search__product");
 
-inputSearch.addEventListener("change",()=> {
-  const keyWord = chuyenChuoiInHoaKhongDau(document.getElementById("search__product").value);
+inputSearch.addEventListener("change", () => {
+  const keyWord = chuyenChuoiInHoaKhongDau(
+    document.getElementById("search__product").value
+  );
   const listProducts = JSON.parse(localStorage.getItem("listProducts"));
   const listProductResult = [];
 
@@ -187,7 +187,7 @@ inputSearch.addEventListener("change",()=> {
       document.getElementById("search__product").value = "";
     }
   }
-})
+});
 
 function chuyenChuoiInHoaKhongDau(chuoi) {
   return chuoi
@@ -197,44 +197,43 @@ function chuyenChuoiInHoaKhongDau(chuoi) {
 }
 // edit product
 
-const editIcons = document.querySelectorAll('.img__edit');
+const editIcons = document.querySelectorAll(".img__edit");
 editIcons.forEach((editIcon, index) => {
-  editIcon.addEventListener('click', () => {
+  editIcon.addEventListener("click", () => {
     editProduct(index);
   });
 });
 
-const formProduct = $(".form_product__wrap")
+const formProduct = $(".form_product__wrap");
 
 function editProduct(index) {
   const editingProductIndex = index;
   const product = listProducts[index];
 
-  document.getElementById('src__product').value = product.url;
-  document.getElementById('name__product').value = product.name;
-  document.getElementById('price__product').value = product.price;
+  document.getElementById("src__product").value = product.url;
+  document.getElementById("name__product").value = product.name;
+  document.getElementById("price__product").value = product.price;
 
-  const btnUpdate = $(".btn__edit")
-  btnUpdate.addEventListener('click', () => {
+  const btnUpdate = $(".btn__edit");
+  btnUpdate.addEventListener("click", () => {
     if (editingProductIndex !== -1) {
-      const src = document.getElementById('src__product').value;
-      const nameProduct = document.getElementById('name__product').value;
-      const price = document.getElementById('price__product').value;
-  
+      const src = document.getElementById("src__product").value;
+      const nameProduct = document.getElementById("name__product").value;
+      const price = document.getElementById("price__product").value;
+
       if (!src || !nameProduct || isNaN(price)) {
-        alert('Vui lòng nhập đủ thông tin và giá sản phẩm hợp lệ.');
+        alert("Vui lòng nhập đủ thông tin và giá sản phẩm hợp lệ.");
       } else {
         listProducts[editingProductIndex] = {
           url: src,
           name: nameProduct,
           price: price,
         };
-        upDateProduct(listProducts)
-        localStorage.setItem("listProducts",JSON.stringify(listProducts))
-        formProduct.reset() 
+        upDateProduct(listProducts);
+        localStorage.setItem("listProducts", JSON.stringify(listProducts));
+        formProduct.reset();
         editingProductIndex = -1;
       }
     }
   });
-  
 }

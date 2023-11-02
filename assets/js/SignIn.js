@@ -238,3 +238,4 @@ main.addEventListener("click", (e) => {
     blockLogOut.classList.remove("active");
   }
 });
+
