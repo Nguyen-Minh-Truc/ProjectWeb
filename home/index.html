@@ -140,10 +140,11 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="form__search__wrap content">
             <div class="form__search">
-                <input type="text" name="search__product" id="search__product" class="search__product" placeholder="Search">
+                <input type="text" name="search__product" id="search__product" class="search__product"
+                    placeholder="Search">
                 <button class="btn__search btn">Search</button>
             </div>
         </div>
@@ -158,6 +159,47 @@
             <button class="btn__page_2 btn">2</button>
         </div>
     </main>
+
+    <div id="productInfo" class="modal unactive">
+        <div id="info">
+            <img src="./assets/img/icon_delete..png" alt="" class="close">
+            <div class="left">
+                <img id="imgbig" src="" />
+            </div>
+            <div class="right">
+                <h2 id="productname"></h2>
+                <h4 id="productprice"></h4>
+                <h4>SIZE</h4>
+                <select id="size">
+                    <option value="36" selected>36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                </select>
+                <h4>Quantity</h4>
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <input type="text" class="quantity-input" value="1" />
+                    <button class="increase">+</button>
+                </div>
+               <div class="row">
+                <button class="addtocart" onclick="addToCart()">
+                    Add To Cart
+                </button>
+                <button class="addtocart">
+                    Buy Now
+                </button>
+               </div>
+            </div>
+        </div>
+    </div>
+
+
     <footer class="footer">
         <div class="footer__top">
             <div class="footer__right">
@@ -210,8 +252,8 @@
                 <div class="follow-us-icon">
                     <a href="https://momo.vn"> <img id="momo" src="./assets/img/momo.png" width="30px" height="30px"
                             style="border-radius: 10px;"></a>
-                    <a href="https://www.visa.com"> <img id="visa" src="./assets/img/visa.png"
-                            width="30px" height="30px" style="border-radius: 10px;"></a>
+                    <a href="https://www.visa.com"> <img id="visa" src="./assets/img/visa.png" width="30px"
+                            height="30px" style="border-radius: 10px;"></a>
                 </div>
             </div>
         </div>

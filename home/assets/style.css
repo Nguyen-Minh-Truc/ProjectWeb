@@ -106,3 +106,130 @@
 .btn__page__active {
     background: #f8b550;
 }
+
+/* show thong tin Product */
+#product{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding: 10px 10px 20px 0;
+}
+#productInfo #info{
+	height: 600px;
+	width: 1000px;
+	background-color: #fff;
+	margin: 10rem auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 50px 20px 20px;
+	position: relative;
+	animation: topdown 0.5s;
+	z-index: 20;
+
+}
+#productInfo #info .close{
+	width: 3rem;
+    position: absolute;
+    height: 3rem;
+    top: 0;
+    right: 0;
+}
+#productInfo #info .close:hover{
+	background-color: #ff4700;
+}
+#productInfo #info .left{
+	width: 60%;
+	align-self: center;
+}
+#productInfo #info .left #imgbig{
+	width: 70%;
+}
+#productInfo #info .right{
+	height: 100%;
+	width: 40%;
+}
+#productInfo #info .right #productname{
+	font-size: 26pt;
+}
+#productInfo #info .right #productname::after{
+	content: '';
+	height: 10px;
+	width: 100px;
+	background-color: #ff4700;
+	display: block;
+	margin: 20px 0 30px;
+}
+#productInfo #info .right #productprice{
+	font-size: 18pt;
+	margin-bottom: 20px;
+}
+#productInfo #info .right #size{
+	font-size: 16pt;
+	padding: 5px 30px;
+	border: 2px solid #000;
+	margin: 10px 0 20px;
+}
+#productInfo #info .right .quantity .quantity-input{
+	font-size: 16pt;
+	width: 80px;
+	height: 40px;
+	padding: 5px;
+	border: 2px solid #000;
+	margin: 10px 0 60px;
+	text-align: center;
+}
+#productInfo #info .right .quantity .decrease {
+	display: inline-block;
+	font-size: 16pt;
+	color: #ff4700;
+	width: 50px;
+	height: 40px;
+	border: 2px solid #000;
+	border-right: none;
+	background-color: #fff;
+	outline: none;
+	cursor: pointer;
+}
+#productInfo #info .right .quantity .increase{
+	display: inline-block;
+	font-size: 16pt;
+	color: #ff4700;
+	width: 50px;
+	height: 40px;
+	border: 2px solid #000;
+	border-left: none;
+	background-color: #fff;
+	outline: none;
+	cursor: pointer;
+}
+#productInfo #info .right .quantity .increase:active , #productInfo #info .right .quantity .decrease:active{
+	background-color: #ff4700;
+	color: #fff;
+}
+#productInfo #info .right .addtocart{
+	display: block;
+	cursor: pointer;
+	font-size: 16pt;
+	padding: 10px 30px;
+	background-color: #ff4700;
+	color: #fff;
+	border: 2px solid #ff4700;
+}
+#productInfo #info .right .addtocart:hover{
+	background-color: #fff;
+	color: #ff4700;
+	border: 2px solid #ff4700;
+}
+
+.modal{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index: 10;
+	overflow-y: auto;
+} 
+
