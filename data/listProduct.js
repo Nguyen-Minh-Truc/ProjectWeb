@@ -27,7 +27,7 @@
     {
         id : 4,
         url : "../assets/img/listProduct/product_4.webp",   
-        name : "Quần Tây Single Linen Base",
+        name : "Áo thun Single Linen Base",
         price: "15",
         type: "quần"
 

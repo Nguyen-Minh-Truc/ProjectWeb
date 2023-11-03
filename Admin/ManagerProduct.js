@@ -159,9 +159,7 @@ $(".btn__search").addEventListener("click", () => {
   searchProduct();
   refreshEdits();
 });
-function myFunction (){
-  console.log("vhh")
-}
+
 function chuyenChuoiInHoaKhongDau(chuoi) {
   return chuoi
     .toLowerCase()
