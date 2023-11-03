@@ -17,6 +17,12 @@
         rel="stylesheet">
     <!-- header -->
     <link rel="stylesheet" href="../assets/css/header.css">
+    <!-- container -->
+    <link rel="stylesheet" href="../Contact/container.css">
+    <!-- footer -->
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="./css/container.css">
+
 </head>
 
 <body>
@@ -42,18 +48,17 @@
             <div class="signIn">
                 <div class="signIn__wrap">
                     <div class="logIn">Log In</div>
-                <div class="signUp">
-                    <button class="signUp__btn btn">
-                        Sign Up
-                    </button>
-                </div>
+                    <div class="signUp">
+                        <button class="signUp__btn btn">
+                            Sign Up
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="user unactive">
                 <div class="user__wrap row">
                     <span class="user__name"></span>
                     <img src="../assets/img/user-Img.png" alt="" class="user__img">
-                    <img src="../assets/img/img__cart.png" alt="" class="cart__img">
                     <img src="../assets/img/signOut-icon.png" alt="" class="sign__out">
                 </div>
             </div>
@@ -108,8 +113,8 @@
             </form>
         </div>
     </div>
-     <!-- block out -->
-     <div class="block__logOut unactive">
+    <!-- block out -->
+    <div class="block__logOut unactive">
         <div class="block__logOut__wrap">
             <h1 class="block__logOut__title">
                 Do you want to sign out of your account?
@@ -121,11 +126,157 @@
         </div>
     </div>
     <main class="main">
-
+        <!-- container -->
+        <!-- <div class="banner" style="height: 100px;"></div> -->
+        <div class="container">
+            <div class="row content">
+                <div class="container__right">
+                    <form>
+                        <div class="container__right-block">
+                            <span>Name <input type="text" name="Name"></span>
+                            <span>Company <input type="text" name="Company"></span>
+                        </div>
+                        <div class="container__right-block">
+                            <span> Email <input type="text" name="Name"></span>
+                            <span> Phone <input type="text" name="Company"></span>
+                        </div>
+                        <div class="container__textquestions">
+                            <textarea placeholder="Your questions or comments..."></textarea>
+                        </div>
+                        <div class="container__button">
+                            <span class="container__button-check"> <label>Are You Human?
+                                    <input type="radio" value="Yes" checked="checked" style="vertical-align: middle;">Yes
+                                    <input type="radio" value="No" style="vertical-align: middle;"> No
+                                </label></span>
+                            <span>
+                                <button class="container__button-send btn">Send</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="container__left">
+                    <div class="container__left-phone">
+                        <div class="container__left-phone-title">Phone</div>
+                        <div onclick="callPhoneNumber()" class="container__left-phone-phonenumber">+84 378 308 976</div>
+                    </div>
+                    <div class="container__left-phone">
+                        <div class="container__left-phone-title">Fax</div>
+                        <div onclick="callPhoneNumber()" class="container__left-phone-phonenumber">+84 378 308 977</div>
+                    </div>
+                    <div class="container__left-phone">
+                        <div class="container__left-phone-title">Email</div>
+                        <div onclick="sendEmail()" class="container__left-phone-phonenumber"> infotask@gmail.com </div>
+                    </div>
+                    <div class="container__left-phone">
+                        <div class="container__left-phone-title">Social</div>
+                        <div class="list list-design">
+                            <ul>
+                                <li onclick="openFacebook()">Facebook</li>
+                                <li onclick="openInstagram()">Instagram</li>
+                                <li onclick="openTikTok()">Tiktok</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__bottom">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.669658461941!2d106.67968337481815!3d10.759922359498395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b7c3ed289%3A0xa06651894598e488!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTw6BpIEfDsm4!5e0!3m2!1svi!2s!4v1698939788865!5m2!1svi!2s"
+                    width="797px" height="397px" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">" height="40rem" width="80rem" frameborder="0"
+                    style="border:0"></iframe>
+            </div>
+        </div>
     </main>
 
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__right">
+                <span class="footer-setcity footer__right-list">TP.HỒ CHÍ MINH</span>
+                <ul class="footer__right-list footer__right-list-cursion">
+                    <li><span class="bold">Store 1:</span> 17bis Huỳnh Đình Hai Phường 14 - Quận Bình Thạnh</li>
+                    <li><span class="bold">Store 2:</span> 68 Nguyễn Trãi Phường 3 - Quận 5</li>
+                    <li><span class="bold">Store 3:</span> 539 Sư Vạn Hạnh Phường 13 - Quận 10</li>
+                    <li><span class="bold">Store 4:</span> 1002 Quang Trung Phường 8 - Quận Gò Vấp</li>
+                    <li><span class="bold">Store 5:</span> 166 Trường Chinh Phường 13 - Quận Tân Bình</li>
+                    <li><span class="bold">Store 6:</span> 148 Nguyễn Trãi P.Bến Thành - Quận 1</li>
+                </ul>
+            </div>
+            <div class="footer__center">
+                <span class="footer-setcity footer__right-list">HÀ NỘI</span>
+                <div><span class="bold footer__right-list">Store 7:</span> 17bis Huỳnh Đình Hai Phường 14 - Quận Bình
+                    Thạnh</div>
+                <div class="block">
+                    <div class="footer-setadd footer__right-list">CHÍNH SÁCH ĐỔI TRẢ</div>
+                    <div class="footer-setadd footer__right-list">GIỚI THIỆU</div>
+                </div>
+            </div>
+            <div class="footer__left">
+                <div class="footer-setcity footer__right-list">HỖ TRỢ (9:00 - 21:00)</div>
+                <div class="footer__left-info">
+                    <span class="icon">
+                        <img id="hphone" onclick="callPhoneNumber()" src="../home/assets/img/headphone.png" width="20px"
+                            height="20px" style="vertical-align: middle;">
+                        028 7307 6464
+                    </span>
+                    <span class="icon">
+                        <img id="mail" onclick="sendEmail()" src="../home/assets/img/mail.png" width="20px"
+                            height="20px" style="vertical-align: middle;">
+                        info@task.vn
+                    </span>
+                </div>
+                <div class="footer-setcity footer__right-list">THEO DÕI CHÚNG TÔI</div>
+                <div class="follow-us-icon">
+                    <img id="facebk" onclick="openFacebook()" src="../home/assets/img/facebook.png" width="30px"
+                        height="30px">
+                    <img id="instagr" onclick="openInstagram()" src="../home/assets/img/instagram.png" width="30px"
+                        height="30px">
+                    <img id="tt" onclick="openTikTok()" src="../home/assets/img/tiktok.png" width="30px" height="30px">
+                </div>
+                <div class="footer-setcity footer__right-list">THANH TOÁN</div>
+                <div class="follow-us-icon">
+                    <img id="momo" onclick="openMomo()" src="../home/assets/img/momo.png" width="30px" height="30px"
+                        style="border-radius: 10px;">
+                    <img id="visa" onclick="openVisa()" src="../home/assets/img/visa.png" width="30px" height="30px"
+                        style="border-radius: 10px;">
+                </div>
+                <script>
+                    function callPhoneNumber() {
+                        window.location.href = 'tel:02873076464';
+                    }
+
+                    function sendEmail() {
+                        window.location.href = 'mailto:info@task.vn';
+                    }
+
+                    function openFacebook() {
+                        window.open('https://www.facebook.com/');
+                    }
+
+                    function openTikTok() {
+                        window.open('https://www.tiktok.com/');
+                    }
+
+                    function openInstagram() {
+                        window.open('https://www.instagram.com/');
+                    }
+
+                    function openMomo() {
+                        window.open('https://momo.vn');
+                    }
+
+                    function openVisa() {
+                        window.open('https://www.visa.com');
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="footer__bottom">SINCE TASK 2023</div>
+    </footer>
+
     <script src="../assets/js/SignIn.js"></script>
-   
+
 </body>
 
 </html>

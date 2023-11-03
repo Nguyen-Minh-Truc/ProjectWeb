@@ -1,6 +1,7 @@
 import { listProductData } from "../data/listProduct.js";
 const listProducts =JSON.parse(localStorage.getItem("listProducts")) || listProductData;
 localStorage.setItem("listProducts", JSON.stringify(listProducts));
+
 function upDateProduct(listProducts) {
   const listProduct = $(".listProduct");
   listProduct.innerHTML = " ";

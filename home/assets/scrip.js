@@ -26,7 +26,6 @@ itemMenu.forEach((item) => {
   });
 });
 // search top menu
-
 itemMenu.forEach((item) => {
   const listProducts = JSON.parse(localStorage.getItem("listProducts"));
   var listProductResult = [];
@@ -88,15 +87,14 @@ searchInput.addEventListener("input", function() {
       createListProduct(listProductResult);
     } else {
       createListProduct(listProducts); 
+      
     }
   }
 });
 
 // search Product
 function searchProduct() {
-  const keyWord = chuyenChuoiInHoaKhongDau(
-    document.getElementById("search__product").value
-  );
+  const keyWord = chuyenChuoiInHoaKhongDau(document.getElementById("search__product").value);
   const listProducts = JSON.parse(localStorage.getItem("listProducts"));
   const listProductResult = [];
 
