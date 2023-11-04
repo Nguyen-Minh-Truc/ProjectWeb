@@ -108,14 +108,8 @@
 }
 
 /* show thong tin Product */
-#product{
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	padding: 10px 10px 20px 0;
-}
-#productInfo #info{
+
+#info{
 	height: 600px;
 	width: 1000px;
 	background-color: #fff;
@@ -128,32 +122,32 @@
 	z-index: 20;
 
 }
-#productInfo #info .close{
+.close{
 	width: 3rem;
     position: absolute;
     height: 3rem;
     top: 0;
     right: 0;
 }
-#productInfo #info .close:hover{
+.close:hover{
 	background-color: #ff4700;
 	transform: scale(1.2);
 }
-#productInfo #info .left{
+.left{
 	width: 60%;
 	align-self: center;
 }
-#productInfo #info .left #imgbig{
+.left #imgbig{
 	width: 70%;
 }
-#productInfo #info .right{
+.right{
 	height: 100%;
 	width: 40%;
 }
-#productInfo #info .right #productname{
+#productname{
 	font-size: 26pt;
 }
-#productInfo #info .right #productname::after{
+#productname::after{
 	content: '';
 	height: 10px;
 	width: 100px;
@@ -161,17 +155,17 @@
 	display: block;
 	margin: 20px 0 30px;
 }
-#productInfo #info .right #productprice{
+#productprice{
 	font-size: 18pt;
 	margin-bottom: 20px;
 }
-#productInfo #info .right #size{
+#size{
 	font-size: 16pt;
 	padding: 5px 30px;
 	border: 2px solid #000;
 	margin: 10px 0 20px;
 }
-#productInfo #info .right .quantity .quantity-input{
+.quantity-input{
 	font-size: 16pt;
 	width: 80px;
 	height: 40px;
@@ -180,7 +174,7 @@
 	margin: 10px 0 60px;
 	text-align: center;
 }
-#productInfo #info .right .quantity .decrease {
+.decrease {
 	display: inline-block;
 	font-size: 16pt;
 	color: #ff4700;
@@ -192,7 +186,7 @@
 	outline: none;
 	cursor: pointer;
 }
-#productInfo #info .right .quantity .increase{
+.increase{
 	display: inline-block;
 	font-size: 16pt;
 	color: #ff4700;
@@ -204,11 +198,11 @@
 	outline: none;
 	cursor: pointer;
 }
-#productInfo #info .right .quantity .increase:active , #productInfo #info .right .quantity .decrease:active{
+.increase:active , .decrease:active{
 	background-color: #ff4700;
 	color: #fff;
 }
-#productInfo #info .right .addtocart{
+.addtocart{
 	display: block;
 	cursor: pointer;
 	font-size: 16pt;
