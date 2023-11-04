@@ -49,7 +49,7 @@ itemMenu.forEach((item) => {
         createListProduct(listProductResult);
         listProductResult = [];
       } else {
-        createListProduct(listProducts);
+        createListProduct(listProductResult);
       }
     }
   });
@@ -87,7 +87,7 @@ searchInput.addEventListener("input", function () {
     if (result) {
       createListProduct(listProductResult);
     } else {
-      createListProduct(listProducts);
+      createListProduct(listProductResult);
     }
   }
 });
@@ -123,6 +123,7 @@ function searchProduct() {
     }
   }
 }
+
 searchResults.addEventListener("click", () => {
   searchProduct();
 });

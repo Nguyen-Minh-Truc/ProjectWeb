@@ -137,6 +137,7 @@
 }
 #productInfo #info .close:hover{
 	background-color: #ff4700;
+	transform: scale(1.2);
 }
 #productInfo #info .left{
 	width: 60%;
@@ -156,7 +157,7 @@
 	content: '';
 	height: 10px;
 	width: 100px;
-	background-color: #ff4700;
+	background-color: red;
 	display: block;
 	margin: 20px 0 30px;
 }
@@ -211,17 +212,8 @@
 	display: block;
 	cursor: pointer;
 	font-size: 16pt;
-	padding: 10px 30px;
-	background-color: #ff4700;
-	color: #fff;
-	border: 2px solid #ff4700;
+	padding: 10px 20px;
 }
-#productInfo #info .right .addtocart:hover{
-	background-color: #fff;
-	color: #ff4700;
-	border: 2px solid #ff4700;
-}
-
 .modal{
 	height: 100%;
 	width: 100%;
