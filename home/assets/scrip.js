@@ -31,51 +31,52 @@ itemMenu.forEach((item) => {
   });
 });
 // search top menu
-// itemMenu.forEach((item) => {
-//   const listProducts = JSON.parse(localStorage.getItem("listProducts"));
-//   var listProductResult = [];
-//   item.addEventListener("click", () => {
-//     const keyWord = chuyenChuoiInHoaKhongDau(item.textContent);
-//     if (keyWord == "all") {
-//       createListProduct(listProducts);
-//       return;
-//     } else {
-//       let result = false;
 
-//       for (let i = 0; i < listProducts.length; i++) {
-//         const product = chuyenChuoiInHoaKhongDau(listProducts[i].name);
-//         if (product.indexOf(keyWord) !== -1) {
-//           listProductResult.push(listProducts[i]);
-//           result = true;
-
-//         }
-//         console.log(listProductResult)
-//       }
-//       if (result) {
-//         createListProduct(listProductResult);
-//         listProductResult = [];
-//       } else {
-//         createListProduct(listProductResult);
-//       }
-//     }
-//   });
-// });
-
-itemMenu.forEach((item)=> {
-  item.addEventListener("click",()=> {
+itemMenu.forEach((item) => {
   const listProducts = JSON.parse(localStorage.getItem("listProducts"));
-  console.log(chuyenChuoiInHoaKhongDau(item.textContent))
-  const result = listProducts.filter(product => chuyenChuoiInHoaKhongDau(item.textContent) == chuyenChuoiInHoaKhongDau(product.type))
-  console.log(result)
-  if(result){
+  var listProductResult = [];
+  item.addEventListener("click", () => {
+    const keyWord = chuyenChuoiInHoaKhongDau(item.textContent);
+    if (keyWord == "all") {
+      createListProduct(listProducts);
+      return;
+    } else {
+      let result = false;
+
+      for (let i = 0; i < listProducts.length; i++) {
+        const product = chuyenChuoiInHoaKhongDau(listProducts[i].name);
+        if (product.indexOf(keyWord) !== -1) {
+          listProductResult.push(listProducts[i]);
+          result = true;
+
+        }
+        console.log(listProductResult)
+      }
+      if (result) {
+        createListProduct(listProductResult);
+        listProductResult = [];
+      } else {
+        createListProduct(listProductResult);
+      }
+    }
+  });
+});
+
+// itemMenu.forEach((item)=> {
+//   item.addEventListener("click",()=> {
+//   const listProducts = JSON.parse(localStorage.getItem("listProducts"));
+//   console.log(chuyenChuoiInHoaKhongDau(item.textContent))
+//   const result = listProducts.filter(product => chuyenChuoiInHoaKhongDau(item.textContent) == chuyenChuoiInHoaKhongDau(product.type))
+//   console.log(result)
+//   if(result){
     
-    createListProduct(null)
-    createListProduct(result)
-  }else{
-    createListProduct([])
-  }
- })
-})
+//     createListProduct(null)
+//     createListProduct(result)
+//   }else{
+//     createListProduct([])
+//   }
+//  })
+// })
 
 function chuyenChuoiInHoaKhongDau(chuoi) {
   return chuoi
