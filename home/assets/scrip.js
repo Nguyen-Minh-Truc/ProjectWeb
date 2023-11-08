@@ -86,35 +86,34 @@ function chuyenChuoiInHoaKhongDau(chuoi) {
 }
 
 // input tim kiem
-// const searchInput = document.getElementById("search__product");
+const searchInput = document.getElementById("search__product");
 const searchResults = document.querySelector(".btn__search");
 
-// searchInput.addEventListener("input", function () {
-//   const searchTerm = chuyenChuoiInHoaKhongDau(searchInput.value);
+searchInput.addEventListener("input", function () {
+  const searchTerm = chuyenChuoiInHoaKhongDau(searchInput.value);
 
-//   const listProducts = JSON.parse(localStorage.getItem("listProducts"));
-//   const listProductResult = [];
+  const listProducts = JSON.parse(localStorage.getItem("listProducts"));
+  const listProductResult = [];
 
-//   if (!searchTerm) {
-//     createListProduct(listProducts);
-//   } else {
-//     let result = false;
+  if (!searchTerm) {
+    createListProduct(listProducts);
+  } else {
+    let result = false;
 
-//     for (let i = 0; i < listProducts.length; i++) {
-//       const product = chuyenChuoiInHoaKhongDau(listProducts[i].name);
-//       if (product.indexOf(searchTerm) !== -1) {
-//         listProductResult.push(listProducts[i]);
-//         result = true;
-//       }
-//     }
-//     if (result) {
-//       createListProduct(null)
-//       createListProduct(listProductResult);
-//     } else {
-//       createListProduct(listProductResult);
-//     }
-//   }
-// });
+    for (let i = 0; i < listProducts.length; i++) {
+      const product = chuyenChuoiInHoaKhongDau(listProducts[i].name);
+      if (product.indexOf(searchTerm) !== -1) {
+        listProductResult.push(listProducts[i]);
+        result = true;
+      }
+    }
+    if (result) {
+      createListProduct(listProductResult);
+    } else {
+      createListProduct(listProductResult);
+    }
+  }
+});
 
 
 
@@ -140,7 +139,6 @@ function searchProduct() {
     }
 
     if (result) {
-      createListProduct(null)
       createListProduct(listProductResult);
       document.getElementById("search__product").value = "";
     } else {
@@ -168,8 +166,6 @@ callBlocks.forEach((item) => {
     if (result) {
       productInfo.classList.add("active");
       productInfo.classList.remove("unactive");
-
-
       document.getElementById("imgbig").src = result[0].url;
       document.getElementById("productname").innerHTML = result[0].name;
       document.getElementById("productprice").innerHTML =  `${result[0].price}$`;
