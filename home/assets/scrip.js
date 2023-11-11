@@ -161,7 +161,7 @@ function addClickEventToProducts() {
         document.getElementById("imgbig").src = result[0].url;
         document.getElementById("productname").innerHTML = result[0].name;
         document.getElementById("productprice").innerHTML = `${result[0].price}$`;
-
+        document.querySelector('button.addtocart').setAttribute('onclick', 'addToCart(' + result[0].id + ')');
         const closeBtn = document.querySelector(".close");
 
         closeBtn.addEventListener("click", () => {
@@ -171,6 +171,13 @@ function addClickEventToProducts() {
           document.getElementById("size").value = document.getElementById("size").options[0].value;
         });
       }
+      const closeBtn1 = document.querySelector(".addtocart");
+      closeBtn1.addEventListener("click", () => {
+      productInfo.classList.remove("active");
+      productInfo.classList.add("unactive");
+      document.querySelector('.quantity-input').value = 1;
+      document.getElementById('size').value = document.getElementById('size').options[0].value;
+    })
     });
   });
 }
@@ -225,4 +232,3 @@ document.querySelector(".btn__page_1").addEventListener('click', ()=> {
   document.querySelector(".btn__page_2").classList.remove("btn__page__active")
   document.querySelector(".btn__page_1").classList.add("btn__page__active")
 })
-

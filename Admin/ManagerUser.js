@@ -55,3 +55,57 @@ function deleteProduct(listUsers, i) {
     alert("không thể xoá người là Admin");
   }
 }
+
+//showOrdersList
+function showOrdersList() {
+	const orderArray = JSON.parse(localStorage.getItem('bill'));
+	let s = '';
+  if (orderArray == null) {
+    s += ''
+  }
+  else {
+    for (let i = 0; i < orderArray.length; i++) {
+		s += '<tr>' +
+      '<td class = "nameUser">' + orderArray[i].id + '</td>' +
+			'<td class = "nameUser">' + orderArray[i].customer + '</td>' +
+			'<td class = "infoProduct">' + orderArray[i].info + '</td>' +
+      '<td class = "price">' + orderArray[i].totalprice + '</td>' +
+			'<td class = "date">' + orderArray[i].date + '</td>' +
+			'<td class = "accept">' + orderArray[i].status + '</td>' +
+			'<td class = "cancel"> <button class="" onclick="accept(' + orderArray[i].id + ')">Nhận</button>' +
+			'<button class="" onclick="refuse(' + orderArray[i].id + ')">Từ chối</button> </td>' +
+			'</tr>';
+	}
+  }
+	document.querySelector('.listOrders').innerHTML = s;
+}
+showOrdersList();
+
+function accept(id) {
+	const orderArray = JSON.parse(localStorage.getItem('bill'));
+	for (let i = 0; i < orderArray.length; i++) {
+		if (orderArray[i].id == id) {
+			if (orderArray[i].status == "Đang nhận đơn hàng") {
+				orderArray[i].status = "Đã nhận đơn hàng";
+				localStorage.setItem('bill', JSON.stringify(orderArray));
+			}
+		}
+	}
+	showOrdersList();
+}
+
+function refuse(id) {
+	const orderArray = JSON.parse(localStorage.getItem('bill'));
+	for (let i = 0; i < orderArray.length; i++) {
+		if (orderArray[i].id == id && orderArray[i].status != "Đã hủy đơn hàng") {
+			orderArray[i].status = "Đơn hàng bị từ chối";
+			localStorage.setItem('bill', JSON.stringify(orderArray));
+		}
+	}
+	showOrdersList();
+}
+
+function interupt() {
+  localStorage.removeItem('bill');
+  showOrdersList();
+}

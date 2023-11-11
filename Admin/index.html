@@ -55,7 +55,7 @@
                 <div class="user__wrap row">
                     <span class="user__name"></span>
                     <img src="../assets/img/user-Img.png" alt="" class="user__img">
-                    <img src="../assets/img/img__cart.png" alt="" class="cart__img">
+                    <a href="../cart/cart.html"><img src="../assets/img/img__cart.png" alt="" class="cart__img"></a>
                     <img src="../assets/img/signOut-icon.png" alt="" class="sign__out">
                 </div>
             </div>
@@ -187,15 +187,20 @@
             </table>
         </div>
         <!-- oder -->
-        <div class="table__order table__wrap unactive">
-            <table class="table content">
+        <div class="table__order table__wrap unactive" onload="showOrdersList()">
+            <div class="table__order--warning">(*)Nhấn Interupt sẽ xóa toàn bộ order</div>
+            <table class="table content table--order">
                 <tr class="table__header_row">
-                    <th class="table__header_col">Name User</th>
-                    <th class="table__header_col">Name Product</th>
-                    <th class="table__header_col">Accept</th>
-                    <th class="table__header_col">Cancle</th>
+                    <th class="table__header_col id-order">ID Order</th>
+                    <th class="table__header_col name-user">Name User</th>
+                    <th class="table__header_col info">Info</th>
+                    <th class="table__header_col price">Price</th>
+                    <th class="table__header_col date">Date</th>
+                    <th class="table__header_col accept">Accept</th>
+                    <th class="table__header_col interupt" onclick="interupt()">Interupt</th>
                 </tr>
-                <tbody>
+                <tbody class="listOrders">
+
                 </tbody>
             </table>
         </div>
@@ -217,6 +222,7 @@
     <script src="./Script.js"></script>
     <script type="module" src="./ManagerProduct.js"></script>
     <script src="./ManagerUser.js"></script>
+    <script src="../cart/cart.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,289 @@
+.cart {
+    display: block;
+}
+
+.cart .container {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.cart .container .contain {
+    background-color: none;
+    position: absolute;
+    top: 60px;
+    left: 10%;
+    height: 900px;
+    min-height: auto;
+    width: 80%;
+    border: #000 solid 2px;
+    min-width: 536px;
+}
+
+.cart .title {
+    height: 50px;
+    background-color: #ef8f00;
+    width: 100%;
+    position: relative;
+    margin-top: 70px;
+    font-family: 'roboto', sans-serif;
+}
+
+.cart .title h1{
+	display: inline-block;
+	padding-bottom: 8px;
+	border-bottom: 3px solid black;
+    font-size: 2.5rem;
+    margin-left: 45%;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.cart .contain .carttable p {
+    display: flex;
+    width: 900px;
+    height: 100px;
+    font-size: larger;
+    color: #d6d4d4;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart .contain .carttablediv {
+    overflow-y: scroll;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.cart .contain .carttable th, .cart .contain .carttable td{
+	border-bottom: 2px solid #000;
+	padding: 10px;
+	vertical-align: middle;
+}
+.cart .contain .carttable td:not(:nth-child(2)){
+	width: 150px;
+	text-align: center;
+}
+.cart .contain .carttable td:nth-child(2) {
+    width: 300px;
+}
+.cart .contain .carttable td img{
+	height: 80px;
+}
+.cart .contain .carttable td button{
+	height: 30px;
+	width: 30px;
+	line-height: 25px;
+	font-size: 15pt;
+	text-align: center;
+	border: none;
+	background: #eae9e9;
+	cursor: pointer;
+	outline: none;
+    border-radius: 50%;
+}
+
+.cart .contain .carttable td .img-delete {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.cart .contain .carttable td img:active {
+    background-color: #d6d4d4;
+    border: #ef8f00 1px solid;
+}
+
+.cart .contain .carttable td button:hover {
+    background-color: #d6d4d4;
+}
+
+.cart .contain .carttable td button:active {
+    background-color: #ef8f00;
+}
+
+.cart .contain .carttable td input{
+	height: 25px;
+	width: 50px;
+	font-size: 12pt;
+	text-align: center;
+	border: none;
+	background: none;
+}
+
+.cart .contain .total {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 25px;
+}
+
+.cart .contain .total span {
+    color: red;
+    font-size: 2.2rem;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.cart .contain .total p {
+    font-size: 1.8rem;
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+.cart .contain .button--payment-delete {
+    justify-content: flex-end;
+    display: block;
+    float: right;
+    margin: 0 30px 0 0;
+}
+
+.cart .contain .button--payment-delete button {
+    height: 45px;
+    width: 248px;
+    margin-top: 15px;
+    display: block;
+    background-color: #ef8f00;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: bold;
+}
+
+footer {
+    top: 1200px;
+}
+
+.carttable {
+    overflow-y: scroll;
+    height: 100px;
+}
+
+.modal{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index: 10;
+	overflow-y: auto;
+    display: flex;
+    justify-content: center;
+} 
+
+.bill .info {
+    background-color: #ffffff ;
+    height: 600px;
+    width: 80%;
+    position: relative;
+    margin-top: 80px;
+    min-width: 560px;
+}
+
+.bill .info .title{
+    background-color: #ef8f00;
+    height: 68px;
+    width: 100%;
+    padding-top: 16px;
+    font-size: 3rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bill .info .title p {
+    width: 250px;
+    line-height: 1.23;
+    border-bottom: 5px solid black;
+}
+
+.bill .info .table-bill {
+    width: 100%;
+    overflow-y: scroll;
+    height: 532px;
+}
+
+.bill .info .table-bill table {
+    width: 95%;
+    font-size: 1.7rem;
+    font-weight: 500;
+    border-collapse: separate;
+    border-spacing: 5px 30px; /* Khoảng cách theo chiều dọc và chiều ngang */
+}
+
+.bill .info .table-bill td {
+    vertical-align: middle;
+}
+
+
+.bill .info .table-bill tr {
+    margin-top: 100px;
+}
+
+.bill .info .table-bill .first-row {
+    text-align: center;
+}
+
+.center-column {
+    text-align: center;
+}
+
+.info-column {
+    padding-left: 25px;
+    max-width: 438.28px;
+    line-height: 1. 2;
+}
+
+.cancel-order {
+    background-color: #ef8f00;
+    height: 35px;
+    font-size: small;
+    font-weight: 700;
+    overflow: hidden; /* Ngăn chữ tràn ra ngoài button */
+    cursor: pointer;
+}
+
+.cancel-bill-table {
+    position: absolute;
+    font-size: 40px;
+    top: 0px;
+    right: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cancel-bill-table:hover {
+    color: #000000;
+    font-size: 45px;
+    text-shadow: 0px 0px 10px black,
+    0 0 20px black;
+}
+
+.bill-text {
+    color: #ef8f00;
+    font-size: large;
+    font-weight: bolder;
+    position: absolute;
+    top: 155px;
+    right: 160px;
+    cursor: pointer;
+}
+
+.not-allowed {
+    background-color: #e7e8ee;
+    color: #b9bcc6;
+    border: none;
+    cursor: not-allowed;
+}
+
+.table-bill p{
+    font-size: larger;
+    font-weight: bold;
+    color: #b9bcc6;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

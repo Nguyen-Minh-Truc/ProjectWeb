@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="../Contact/container.css" />
     <!-- footer -->
     <link rel="stylesheet" href="../assets/css/footer.css" />
-    <link rel="stylesheet" href="./css/container.css" />
+    <!-- cart -->
+    <link rel="stylesheet" href="./cart.css" />
   </head>
 
   <body>
@@ -36,7 +37,7 @@
               <a href="../home/index.html" class="nav__item__link">Home</a>
             </li>
             <li class="nav__item">
-              <a href="#!" class="nav__item__link nav__item__link--active"
+              <a href="../Contact/index.html" class="nav__item__link"
                 >Contacts</a
               >
             </li>
@@ -176,105 +177,108 @@
         </div>
       </div>
     </div>
-    <main class="main">
-      <!-- container -->
-      <!-- <div class="banner" style="height: 100px;"></div> -->
-      <div class="container">
-        <div class="row content">
-          <div class="container__right">
-            <form>
-              <div class="container__right-block">
-                <span>Name <input type="text" name="Name" /></span>
-                <span>Company <input type="text" name="Company" /></span>
-              </div>
-              <div class="container__right-block">
-                <span> Email <input type="text" name="Name" /></span>
-                <span> Phone <input type="text" name="Company" /></span>
-              </div>
-              <div class="container__textquestions">
-                <textarea
-                  placeholder="Your questions or comments..."
-                ></textarea>
-              </div>
-              <div class="container__button">
-                <span class="container__button-check">
-                  <label
-                    >Are You Human?
-                    <input
-                      type="radio"
-                      value="Yes"
-                      checked="checked"
-                      style="vertical-align: middle"
-                    />Yes
-                    <input
-                      type="radio"
-                      value="No"
-                      style="vertical-align: middle"
-                    />
-                    No
-                  </label></span
-                >
-                <span>
-                  <button class="container__button-send btn">Send</button>
-                </span>
-              </div>
-            </form>
-          </div>
-          <div class="container__left">
-            <div class="container__left-phone">
-              <div class="container__left-phone-title">Phone</div>
-              <div
-                onclick="callPhoneNumber()"
-                class="container__left-phone-phonenumber"
-              >
-                +84 378 308 976
-              </div>
-            </div>
-            <div class="container__left-phone">
-              <div class="container__left-phone-title">Fax</div>
-              <div
-                onclick="callPhoneNumber()"
-                class="container__left-phone-phonenumber"
-              >
-                +84 378 308 977
-              </div>
-            </div>
-            <div class="container__left-phone">
-              <div class="container__left-phone-title">Email</div>
-              <div
-                onclick="sendEmail()"
-                class="container__left-phone-phonenumber"
-              >
-                infotask@gmail.com
-              </div>
-            </div>
-            <div class="container__left-phone">
-              <div class="container__left-phone-title">Social</div>
-              <div class="list list-design">
-                <ul>
-                  <li onclick="openFacebook()">Facebook</li>
-                  <li onclick="openInstagram()">Instagram</li>
-                  <li onclick="openTikTok()">Tiktok</li>
-                </ul>
-              </div>
-            </div>
+    <main class="main" onLoad="showCartTable(); showBillTable()">
+      <div class="cart">
+        <div class="title">
+          <div class="container">
+            <h1>Giỏ hàng</h1>
           </div>
         </div>
-        <div class="container__bottom">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.669658461941!2d106.67968337481815!3d10.759922359498395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b7c3ed289%3A0xa06651894598e488!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTw6BpIEfDsm4!5e0!3m2!1svi!2s!4v1698939788865!5m2!1svi!2s"
-            width="797px"
-            height="397px"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            >" height="40rem" width="80rem" frameborder="0"
-            style="border:0"></iframe
-          >
+        <div class="container">
+          <div class="contain">
+            <div class="carttablediv">
+              <table class="carttable">
+                <!--<tr><th></th><th>Sản phẩm</th><th>Giá</th><th>Số lượng</th><th>Tổng</th><th></th></tr>
+                        <tr>
+                            <td><img src="../assets/img/listProduct/product_1.webp"></td>
+                            <td>
+                                <div>áo thun basic V details </div>
+                                <div>Size: 36</div>
+                            </td>
+                            <td>30000</td>
+                            <td>
+                                <button onClick="quantitydown2('+cartArray[i].productId+')">-</button>
+                                <input class="quantity" type="text" disabled value="6" onchange="updateCart(this.value,'+cartArray[i].productId+')">
+                                <button onClick="quantityup2('+cartArray[i].productId+')">+</button>
+                            </td>
+                            <td>9000000</td>
+                            <td><img src="../assets/img/img__delete.png" class="img-delete"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/img/listProduct/product_10.webp"></td>
+                            <td>
+                                <div>Quan AO Giay  </div>
+                                <div>Size: 38'</div>
+                            </td>
+                            <td>80000</td>
+                            <td>
+                                <button onClick="quantitydown2('+cartArray[i].productId+')">-</button>
+                                <input class="quantity" type="text" disabled value="5" onchange="updateCart(this.value,'+cartArray[i].productId+')">
+                                <button onClick="quantityup2('+cartArray[i].productId+')">+</button>
+                            </td>
+                            <td>4500000</td>
+                            <td><img src="../assets/img/img__delete.png" class="img-delete"></td>
+                        </tr>  -->
+              </table>
+            </div>
+            <div class="total">
+              <p>Thành tiền:</p>
+              <span id="totalprice"></span>
+            </div>
+            <div class="button--payment-delete">
+              <button onclick="deletecart()">Xóa tất cả</button>
+              <button onclick="purchase()">Thanh toán</button>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="bill-text" onclick="showBillTable1()">Xem đơn hàng</div>
     </main>
+
+    <div class="bill modal" style="display: none">
+      <div class="info">
+        <div class="title">
+          <p>Đơn hàng của bạn</p>
+        </div>
+        <div class="table-bill">
+          <!--<table>
+                    <tr class="first-row">
+                        <td>Mã đơn hàng</td>
+                        <td>Thông tin đơn hàng</td>
+                        <td>Giá</td>
+                        <td>Ngày đặt</td>
+                        <td>Tình Trạng</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="center-column">1</td>
+                        <td class="info-column">rvhjbwdb ỉwgbgiubewibgwribngrebowie</td>
+                        <td class="center-column">5189$</td>
+                        <td class="center-column">17-19-2004</td>
+                        <td class="center-column">Đã nhận đơn hàng</td>
+                        <td class="center-column"><button class="cancel-order" onclick="cancelOrder()">Hủy đơn hàng</button></td>
+                    </tr>
+                    <tr>
+                        <td class="center-column">2</td>
+                        <td class="info-column">rvhjbwdb ỉwgbgiubewibgwribngrebowie</td>
+                        <td class="center-column">5189$</td>
+                        <td class="center-column">17-19-2004</td>
+                        <td class="center-column">Đang nhận đơn hàng</td>
+                        <td class="center-column"><button class="cancel-order" onclick="cancelOrder()">Hủy đơn hàng</button></td>
+                    </tr>
+                    <tr>
+                        <td class="center-column">3</td>
+                        <td class="info-column">rvhjbwdb ỉwgbgiubewibgwribngrebowie</td>
+                        <td class="center-column">5189$</td>
+                        <td class="center-column">17-19-2004</td>
+                        <td class="center-column">Đơn hàng bị hủy</td>
+                        <td class="center-column"><button class="cancel-order" onclick="cancelOrder()">Hủy đơn hàng</button></td>
+                    </tr>
+                </table>-->
+        </div>
+        <div class="cancel-bill-table" onclick="cancelBillTable()">×</div>
+      </div>
+    </div>
 
     <!-- footer -->
     <footer class="footer">
@@ -428,11 +432,13 @@
       <div class="footer__bottom">SINCE TASK 2023</div>
     </footer>
 
+    <script src="../assets/js/SignIn.js"></script>
+    <script src="../home/assets/scrip.js"></script>
+    <script src="./cart.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         let name = JSON.parse(localStorage.getItem("name"));
         let adminNavItem = document.getElementById("admin");
-        console.log(name);
         if (name != "ADMIN") {
             adminNavItem.style.display = "none";
         }
@@ -441,6 +447,5 @@
         }
         });
     </script>
-    <script src="../assets/js/SignIn.js"></script>
   </body>
 </html>

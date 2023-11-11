@@ -29,6 +29,7 @@
     font-size: 3rem;
     color: #ccc;
     border: 1px solid #000;
+    width: 80%;
 }
 .table__header_row {
    background: #201980;
@@ -149,4 +150,40 @@ tr,td {
 }
 .btn__cancle__deletePoduct:hover {
     background-color: #ccc;
+}
+
+.table__order--warning {
+    color: red;
+    position: absolute;
+    right: 10%;
+    top: 150px;
+}
+
+.table__order .date {
+    width: 12%;
+}
+
+.table__order .info {
+    width: 35%;
+}
+
+.table__order .infoProduct {
+    line-height: 1.5;
+}
+
+.table__order button {
+    width: 68px;
+    height: 20px;
+}
+
+.table__order .accept {
+    width: 20%;
+}
+
+.table__order .interupt {
+    width: 10%;
+}
+
+.table__order .id-order{
+    width: 7%;
 }
