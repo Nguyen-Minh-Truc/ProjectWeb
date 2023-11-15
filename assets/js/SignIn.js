@@ -238,13 +238,3 @@ main.addEventListener("click", (e) => {
     blockLogOut.classList.remove("active");
   }
 });
-
-
-// reponsive
-const dash = document.querySelector('.icon__dash')
-const headerMain = document.querySelector('.header__main')
-console.log(headerMain)
-
-dash.addEventListener("click", () => {
-    headerMain.style.display = "block"
-});
