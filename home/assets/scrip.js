@@ -232,3 +232,4 @@ document.querySelector(".btn__page_1").addEventListener('click', ()=> {
   document.querySelector(".btn__page_2").classList.remove("btn__page__active")
   document.querySelector(".btn__page_1").classList.add("btn__page__active")
 })
+

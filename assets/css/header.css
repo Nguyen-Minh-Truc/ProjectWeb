@@ -11,6 +11,15 @@
 .header__wrap {
     height: 100%;
 }
+.icon__dash{
+    display: none;
+}
+.header__main{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 /* navigation */
 .nav__container {
     gap: 3rem;

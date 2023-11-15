@@ -239,3 +239,12 @@ main.addEventListener("click", (e) => {
   }
 });
 
+
+// reponsive
+const dash = document.querySelector('.icon__dash')
+const headerMain = document.querySelector('.header__main')
+console.log(headerMain)
+
+dash.addEventListener("click", () => {
+    headerMain.style.display = "block"
+});
