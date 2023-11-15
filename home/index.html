@@ -184,7 +184,7 @@
                 <h4>Quantity</h4>
                 <div class="quantity">
                     <button class="decrease">-</button>
-                    <input type="text" class="quantity-input" value="1"/>
+                    <input type="text" class="quantity-input" value="1" />
                     <button class="increase">+</button>
                 </div>
                 <div class="row" style="justify-content: start; gap: 1rem;">
@@ -224,6 +224,7 @@
             </div>
             <div class="footer__left">
                 <div class="footer-setcity footer__right-list">HỖ TRỢ (9:00 - 21:00)</div>
+
                 <div class="footer__left-info">
                     <span class="icon">
                         <a href="tel:02873076464" style="text-decoration: none;"> <img id="hphone"
@@ -231,15 +232,19 @@
                                 style="vertical-align: middle;">
                             <span style="color: #000;"> 028 7307 6464</span>
                         </a>
-
                     </span>
+
                     <span class="icon">
-                        <a href="mailto:info@task.vn" style="text-decoration: none;"><img id="mail"
-                                src="./assets/img/mail.png" width="20px" height="20px" style="vertical-align: middle;">
-                            <span style="color: #000;">info@task.vn</span></a>
+                        <a href="mailto:info@task.vn" style="text-decoration: none;">
+                            <img id="mail" src="./assets/img/mail.png" width="20px" height="20px"
+                                style="vertical-align: middle;">
+                            <span style="color: #000;">info@task.vn</span>
+                        </a>
                     </span>
                 </div>
+
                 <div class="footer-setcity footer__right-list">THEO DÕI CHÚNG TÔI</div>
+
                 <div class="follow-us-icon">
                     <a href="https://www.facebook.com/"> <img id="facebk" src="./assets/img/facebook.png" width="30px"
                             height="30px"></a>
@@ -248,15 +253,19 @@
                     <a href="https://www.tiktok.com/"> <img id="tt" src="./assets/img/tiktok.png" width="30px"
                             height="30px"></a>
                 </div>
+
                 <div class="footer-setcity footer__right-list">THANH TOÁN</div>
+
                 <div class="follow-us-icon">
                     <a href="https://momo.vn"> <img id="momo" src="./assets/img/momo.png" width="30px" height="30px"
                             style="border-radius: 10px;"></a>
                     <a href="https://www.visa.com"> <img id="visa" src="./assets/img/visa.png" width="30px"
                             height="30px" style="border-radius: 10px;"></a>
                 </div>
+
             </div>
         </div>
+
         <div class="footer__bottom">SINCE TASK 2023</div>
     </footer>
 
@@ -265,15 +274,15 @@
     <script src="../cart/cart.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        let name = JSON.parse(localStorage.getItem("name"));
-        let adminNavItem = document.getElementById("admin");
-        console.log(name);
-        if (name != "ADMIN") {
-            adminNavItem.style.display = "none";
-        }
-        else {
-            adminNavItem.style.display = "block";
-        }
+            let name = JSON.parse(localStorage.getItem("name"));
+            let adminNavItem = document.getElementById("admin");
+            console.log(name);
+            if (name != "ADMIN") {
+                adminNavItem.style.display = "none";
+            }
+            else {
+                adminNavItem.style.display = "block";
+            }
         });
     </script>
 </body>
