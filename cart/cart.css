@@ -233,7 +233,6 @@ footer {
 .info-column {
     padding-left: 25px;
     max-width: 438.28px;
-    line-height: 1. 2;
 }
 
 .cancel-order {
@@ -286,4 +285,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.main {
+    margin-bottom: 100rem;
 }

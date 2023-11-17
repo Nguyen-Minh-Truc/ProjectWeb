@@ -23,56 +23,54 @@
     <link rel="stylesheet" href="../assets/css/footer.css" />
     <!-- cart -->
     <link rel="stylesheet" href="./cart.css" />
+    <!-- reponsive -->
+    <link rel="stylesheet" href="../assets/css/footerRenponsive.css">
+    <link rel="stylesheet" href="../assets/css/headerReponsive.css">
   </head>
 
   <body>
     <header class="header">
       <div class="header__wrap content row">
-        <div class="logo">
-          <img src="../assets/img/logo.svg" alt="" class="logo_main" />
-        </div>
-        <div class="nav">
-          <ul class="nav__container row">
-            <li class="nav__item">
-              <a href="../home/index.html" class="nav__item__link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="../Contact/index.html" class="nav__item__link"
-                >Contacts</a
-              >
-            </li>
-            <li class="nav__item">
-              <a href="../Admin/index.html" class="nav__item__link" id="admin"
-                >Management</a
-              >
-            </li>
-          </ul>
-        </div>
-        <!-- sign in -->
-        <div class="signIn">
-          <div class="signIn__wrap">
-            <div class="logIn">Log In</div>
-            <div class="signUp">
-              <button class="signUp__btn btn">Sign Up</button>
-            </div>
+          <div class="logo">
+              <img src="../assets/img/logo.svg" alt="" class="logo_main">
           </div>
-        </div>
-        <div class="user unactive">
-          <div class="user__wrap row">
-            <span class="user__name"></span>
-            <img src="../assets/img/user-Img.png" alt="" class="user__img" />
-            <a href="../cart/cart.html"
-              ><img src="../assets/img/img__cart.png" alt="" class="cart__img"
-            /></a>
-            <img
-              src="../assets/img/signOut-icon.png"
-              alt=""
-              class="sign__out"
-            />
+          <div class="icon__dash">☰</div>
+        <div class="header__main">
+          <nav class="nav">
+              <ul class="nav__container row">
+                  <li class="nav__item">
+                      <a href="#!" class="nav__item__link">Home</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="../Contact/index.html" class="nav__item__link">Contacts</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="../Admin/index.html" class="nav__item__link" id="admin">Management</a>
+                  </li>
+              </ul>
+          </nav>
+          <!-- sign in -->
+          <div class="signIn">
+              <div class="signIn__wrap">
+                  <div class="logIn">Log In</div>
+                  <div class="signUp">
+                      <button class="signUp__btn btn">
+                          Sign Up
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <div class="user unactive">
+              <div class="user__wrap row">
+                  <span class="user__name"></span>
+                  <img src="../assets/img/user-Img.png" alt="" class="user__img">
+                  <a href="../cart/cart.html"><img src="../assets/img/img__cart.png" alt="" class="cart__img"></a>
+                  <img src="../assets/img/signOut-icon.png" alt="" class="sign__out">
+              </div>
           </div>
         </div>
       </div>
-    </header>
+  </header>
     <!-- block log in -->
     <div class="block__login unactive">
       <div class="block__login__wrap">
@@ -439,6 +437,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         let name = JSON.parse(localStorage.getItem("name"));
         let adminNavItem = document.getElementById("admin");
+        console.log(name);
         if (name != "ADMIN") {
             adminNavItem.style.display = "none";
         }

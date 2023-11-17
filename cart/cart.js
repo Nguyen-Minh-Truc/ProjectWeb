@@ -1,4 +1,20 @@
-
+function checkQuantity() {
+	let quantityInput = document.querySelector('.quantity-input');
+	let quantity = quantityInput.value.trim();
+	let check = parseInt(quantity);
+	if (!Number.isInteger(check) || !/^[1-9]\d*$/.test(quantity)) {
+		quantity = check;
+		quantityInput.value = quantity;
+	}
+	if (isNaN(check) || quantity == 0) {
+		quantity = 1;
+		quantityInput.value = 1;
+	}
+	if (quantity < 20 && quantity != 11 && quantity != 10) {
+        quantityInput.value = quantity%10;
+    }
+	console.log(quantity);
+}
 
 function addToCart(productid1) {
 	var size = document.getElementById('size').value;
@@ -218,6 +234,8 @@ function showBillTable() {
 		}
 		s += '</table>';
 		document.querySelector('.table-bill').innerHTML = s;
+		console.log(bill);
+		console.log(s);
 	}
 
 }

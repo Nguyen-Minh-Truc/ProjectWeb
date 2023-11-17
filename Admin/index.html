@@ -18,6 +18,9 @@
     <!-- header -->
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="./stytle.css">
+    <!-- reponsive -->
+    <link rel="stylesheet" href="../assets/css/footerRenponsive.css">
+    <link rel="stylesheet" href="../assets/css/headerReponsive.css">
 </head>
 
 <body>
@@ -26,7 +29,9 @@
             <div class="logo">
                 <img src="../assets/img/logo.svg" alt="" class="logo_main">
             </div>
-            <div class="nav">
+            <div class="icon__dash">☰</div>
+          <div class="header__main">
+            <nav class="nav">
                 <ul class="nav__container row">
                     <li class="nav__item">
                         <a href="../home/index.html" class="nav__item__link">Home</a>
@@ -38,7 +43,7 @@
                         <a href="#!" class="nav__item__link nav__item__link--active" id="admin">Management</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
             <!-- sign in -->
             <div class="signIn">
                 <div class="signIn__wrap">
@@ -50,8 +55,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="user">
+            <div class="user unactive">
                 <div class="user__wrap row">
                     <span class="user__name"></span>
                     <img src="../assets/img/user-Img.png" alt="" class="user__img">
@@ -59,6 +63,7 @@
                     <img src="../assets/img/signOut-icon.png" alt="" class="sign__out">
                 </div>
             </div>
+          </div>
         </div>
     </header>
     <!-- block log in -->
@@ -188,6 +193,25 @@
         </div>
         <!-- oder -->
         <div class="table__order table__wrap unactive" onload="showOrdersList()">
+            <div class="search-order">
+                <div class="search-order-tittle">BẢNG TRA CỨU</div>
+                <div class="search-order-input">
+                  <input
+                    type="text"
+                    name="id-order"
+                    id="id-order"
+                    placeholder="Nhập mã đơn hàng"
+                  />
+                  <input type="date" name="date-order" id="date-order"/>
+                  <select name="date-around" id="date-around">
+                    <option value="7">Tuần này</option>
+                    <option value="30">Tháng này</option>
+                    <option value="365">Năm này</option>
+                  </select>
+                </div>
+                <button onclick="searchOrder()">Tra cứu</button>
+                <button onclick="statis(); updateStatis()">Bảng thống kê</button>
+              </div>
             <div class="table__order--warning">(*)Nhấn Interupt sẽ xóa toàn bộ order</div>
             <table class="table content table--order">
                 <tr class="table__header_row">
@@ -215,6 +239,41 @@
                 </div>
             </div>
         </div>
+        <div class="statistics modal" style="display: none">
+            <div class="statis">
+              <div class="cancel-statis" onclick="cancelStatis()">×</div>
+              <div class="title">
+                <span>Thống kê</span>
+              </div>
+              <div class="name-product">
+                <div class="name-product-left">
+                  <p>Tên</p>
+                  <select
+                    name="name-product"
+                    id="name-product"
+                    onchange="updateStatis()"
+                  >
+                    <!--<option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>-->
+                  </select>
+                </div>
+                <div class="name-product-right">
+                  <div class="total-statis">
+                    Doanh thu 7 ngày:
+                    <span class="total-statis-price"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
 
 

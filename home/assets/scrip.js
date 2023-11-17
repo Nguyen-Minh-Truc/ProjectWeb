@@ -61,6 +61,7 @@ itemMenu.forEach((item) => {
     });
     item.classList.add("item__menu__active");
   });
+  
 });
 
 function chuyenChuoiInHoaKhongDau(chuoi) {

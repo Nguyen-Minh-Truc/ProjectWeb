@@ -38,7 +38,7 @@
     .logo_main {
         width: 6rem;
     }
-    .nav, .signIn, .user{
+    .header__main {
         display: none;
     }
     .icon__dash{
@@ -61,5 +61,6 @@
     .block__login{
         right: 30%;
     }
+    
 
 }

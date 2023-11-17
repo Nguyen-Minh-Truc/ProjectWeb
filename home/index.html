@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="./assets/style.css">
     <!-- reponsive -->
+    <link rel="stylesheet" href="../assets/css/footerRenponsive.css">
     <link rel="stylesheet" href="../assets/css/headerReponsive.css">
     <link rel="stylesheet" href="./assets/homeRoponsive.css">
-    <link rel="stylesheet" href="../assets/css/footerRenponsive.css">
     </script>
 </head>
 
@@ -131,6 +131,7 @@
         </div>
     </div>
     <main class="main">
+
         <div class="heading"></div>
         <div class="container content">
             <div class="container__wrap">
@@ -175,22 +176,25 @@
             <div class="right">
                 <h2 id="productname"></h2>
                 <h4 id="productprice"></h4>
-                <h4>SIZE</h4>
-                <select id="size">
-                    <option value="36" selected>36</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                    <option value="44">44</option>
-                </select>
+                <div class="display-size">
+                    <h4>SIZE</h4>
+                    <select id="size">
+                        <option value="36" selected>36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                    </select>
+                </div>
+                
                 <h4>Quantity</h4>
                 <div class="quantity">
                     <button class="decrease">-</button>
-                    <input type="text" class="quantity-input" value="1" />
+                    <input type="text" class="quantity-input" value="1" oninput="checkQuantity()"/>
                     <button class="increase">+</button>
                 </div>
                 <div class="row" style="justify-content: start; gap: 1rem;">
@@ -230,7 +234,6 @@
             </div>
             <div class="footer__left">
                 <div class="footer-setcity footer__right-list">HỖ TRỢ (9:00 - 21:00)</div>
-
                 <div class="footer__left-info">
                     <span class="icon">
                         <a href="tel:02873076464" style="text-decoration: none;"> <img id="hphone"
@@ -238,19 +241,15 @@
                                 style="vertical-align: middle;">
                             <span style="color: #000;"> 028 7307 6464</span>
                         </a>
-                    </span>
 
+                    </span>
                     <span class="icon">
-                        <a href="mailto:info@task.vn" style="text-decoration: none;">
-                            <img id="mail" src="./assets/img/mail.png" width="20px" height="20px"
-                                style="vertical-align: middle;">
-                            <span style="color: #000;">info@task.vn</span>
-                        </a>
+                        <a href="mailto:info@task.vn" style="text-decoration: none;"><img id="mail"
+                                src="./assets/img/mail.png" width="20px" height="20px" style="vertical-align: middle;">
+                            <span style="color: #000;">info@task.vn</span></a>
                     </span>
                 </div>
-
                 <div class="footer-setcity footer__right-list">THEO DÕI CHÚNG TÔI</div>
-
                 <div class="follow-us-icon">
                     <a href="https://www.facebook.com/"> <img id="facebk" src="./assets/img/facebook.png" width="30px"
                             height="30px"></a>
@@ -259,19 +258,15 @@
                     <a href="https://www.tiktok.com/"> <img id="tt" src="./assets/img/tiktok.png" width="30px"
                             height="30px"></a>
                 </div>
-
                 <div class="footer-setcity footer__right-list">THANH TOÁN</div>
-
                 <div class="follow-us-icon">
                     <a href="https://momo.vn"> <img id="momo" src="./assets/img/momo.png" width="30px" height="30px"
                             style="border-radius: 10px;"></a>
                     <a href="https://www.visa.com"> <img id="visa" src="./assets/img/visa.png" width="30px"
                             height="30px" style="border-radius: 10px;"></a>
                 </div>
-
             </div>
         </div>
-
         <div class="footer__bottom">SINCE TASK 2023</div>
     </footer>
 
@@ -280,15 +275,15 @@
     <script src="../cart/cart.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            let name = JSON.parse(localStorage.getItem("name"));
-            let adminNavItem = document.getElementById("admin");
-            console.log(name);
-            if (name != "ADMIN") {
-                adminNavItem.style.display = "none";
-            }
-            else {
-                adminNavItem.style.display = "block";
-            }
+        let name = JSON.parse(localStorage.getItem("name"));
+        let adminNavItem = document.getElementById("admin");
+        console.log(name);
+        if (name != "ADMIN") {
+            adminNavItem.style.display = "none";
+        }
+        else {
+            adminNavItem.style.display = "block";
+        }
         });
     </script>
 </body>

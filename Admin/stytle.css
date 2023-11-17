@@ -156,7 +156,7 @@ tr,td {
     color: red;
     position: absolute;
     right: 10%;
-    top: 150px;
+    top: 155px;
 }
 
 .table__order .date {
@@ -186,4 +186,161 @@ tr,td {
 
 .table__order .id-order{
     width: 7%;
+}
+
+
+.statis {
+    display: block;
+    width: 80%;
+    height: 600px;
+    background-color: white;
+    position: relative;
+    left: 10%;
+    top: 12%;
+}
+
+.statis .title {
+    display: flex;
+    width: 100%;
+    height: 88px;
+    background-color: #201980;
+    font-size: 50px;
+    font-weight: 600;
+    color: #b9bbb6;
+    justify-content: center;
+    align-items: center;
+}
+
+.statis .name-product {
+    width: 100%;
+    height: 100px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.name-product-left {
+    display: inline-flex;
+    align-items: center;
+    font-size: 25px;
+    padding-left: 40px;
+    width: 70%;
+}
+
+.name-product-left p {
+    padding-right: 30px;
+}
+
+.name-product-left #name-product {
+    font-size: large;
+    padding-left: 10px;
+    width: 80%;
+    height: 44px;
+}
+
+.name-product-right {
+    font-size: 25px;
+}
+
+.cancel-statis {
+    font-size: 60px;
+    color: #b9bbb6;
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    cursor: pointer;
+}
+
+.search-order {
+    display: flex;
+    height: 130px;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: #000 1px solid;
+    left: 10%;
+    position: relative;
+    margin-top: 25px;
+    border-radius: 25px;
+}
+
+.search-order-tittle {
+    font-size: large;
+    font-weight: bold;
+    color: #201980;
+    position: absolute;
+    top: 10%
+}
+
+.search-order-input {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 5px 0px 5px;
+}
+
+.search-order-input input {
+    height: 25px;
+}
+
+.search-order-input #id-order {
+    min-width: 120px;
+    width: 20%;
+    height: 25px;
+}
+
+.search-order-input #date-order {
+    min-width: 100px;
+    width: 10%;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.search-order-input #date-around {
+    min-width: 77px;
+    width: 10%;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.search-order button {
+    width: 110px;
+    margin-top: 10px;
+}
+
+.table__wrap {
+    min-height: 100vh;
+}
+
+.modal{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index: 10;
+	overflow-y: auto;
+} 
+
+@media (max-width: 720px) {
+    .container__manager {
+        margin-top: 12rem;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .search-order {
+        width: 100%;
+        left: 0;
+    }
+
+    html {
+        width: 100%;
+    }
+
+    .table__order--warning {
+        right: calc(0% + 20px);
+    }
 }
