@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fashion Task</title>
+    <link rel="icon" href="../assets/img/logo.svg" style="background-color: #000;">
     <!-- resset css -->
     <link rel="stylesheet" href="../assets/css/resset.css">
     <!-- common -->
@@ -26,9 +27,9 @@
 <body>
     <header class="header">
         <div class="header__wrap content row">
-            <div class="logo">
+            <a class="logo" href="../home/index.html">
                 <img src="../assets/img/logo.svg" alt="" class="logo_main">
-            </div>
+            </a>
             <div class="icon__dash">☰</div>
           <div class="header__main">
             <nav class="nav">
@@ -59,7 +60,10 @@
                 <div class="user__wrap row">
                     <span class="user__name"></span>
                     <img src="../assets/img/user-Img.png" alt="" class="user__img">
-                    <a href="../cart/cart.html"><img src="../assets/img/img__cart.png" alt="" class="cart__img"></a>
+                    <a href="../cart/cart.html">
+                        <div class="cart-quantity"><span class="cart-quantity-text"></span></div>
+                        <img src="../assets/img/img__cart.png" alt="" class="cart__img">
+                    </a>      
                     <img src="../assets/img/signOut-icon.png" alt="" class="sign__out">
                 </div>
             </div>
@@ -175,7 +179,7 @@
                 </div>
             </div>
             <div class="form__search content">
-                <input type="text" name="search__product" id="search__product" class="search__product"  placeholder="Search">
+                <input type="text" name="search__product" id="search__product" class="search__product"  placeholder="Search" style="padding-left: 15px;">
                 <button class="btn__search btn">Search Product</button>
             </div>
             <table class="table content">
@@ -275,8 +279,6 @@
             </div>
           </div>
     </main>
-
-
     <script src="../assets/js/SignIn.js"></script>
     <script src="./Script.js"></script>
     <script type="module" src="./ManagerProduct.js"></script>

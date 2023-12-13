@@ -289,3 +289,16 @@ footer {
 .main {
     margin-bottom: 100rem;
 }
+
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .cart .title {
+        top: -10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cart .title {
+        top: -15px;
+    }
+}

@@ -1,3 +1,21 @@
+function showQuantityCart() {
+	var cartArray = JSON.parse(localStorage.getItem('cart'));
+	const quantityCard = document.querySelector('.cart-quantity');
+	const quantityCardText = document.querySelector('.cart-quantity-text');
+	if (cartArray == null || cartArray == [] || cartArray.length == 0) {
+		quantityCard.style.display = 'none';
+	} else if (cartArray.length < 10) {
+		quantityCard.style.display = 'flex';
+		quantityCardText.textContent = cartArray.length;
+	} else {
+		quantityCard.style.display = 'flex';
+		quantityCardText.textContent = "9+";
+	}
+}
+document.addEventListener('DOMContentLoaded', function() {
+    showQuantityCart();
+});
+
 function checkQuantity() {
 	let quantityInput = document.querySelector('.quantity-input');
 	let quantity = quantityInput.value.trim();
@@ -54,9 +72,8 @@ function addToCart(productid1) {
 			cartArray.unshift(producttemp);
 			localStorage.setItem('cart', JSON.stringify(cartArray));
 		}
-
 	}
-	showOrdersList();
+	showQuantityCart();
 }
 
 function showCartTable() {
@@ -103,11 +120,13 @@ function deletecartitem(id) {
 	}
 	localStorage.setItem('cart', JSON.stringify(cartArray));
 	showCartTable();
+	showQuantityCart();
 }
 
 function deletecart() {
 	localStorage.removeItem('cart');
 	showCartTable();
+	showQuantityCart();
 }
 
 function updateCart(quantity, id) {
@@ -191,6 +210,7 @@ function purchase() {
 	showBillTable();
 	document.querySelector('.bill').style.display = 'flex';
 	showCartTable();
+	showQuantityCart();
 }
 
 function showBillTable() {
@@ -259,3 +279,4 @@ function cancelBillTable() {
 function showBillTable1() {
 	document.querySelector('.bill').style.display = 'flex';
 }
+

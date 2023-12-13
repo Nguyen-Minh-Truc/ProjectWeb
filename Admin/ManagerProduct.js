@@ -2,6 +2,8 @@ import { listProductData } from "../data/listProduct.js";
 const listProducts =JSON.parse(localStorage.getItem("listProducts")) || listProductData;
 localStorage.setItem("listProducts", JSON.stringify(listProducts));
 
+const $ = document.querySelector.bind(document);
+
 function upDateProduct(listProducts) {
   const listProduct = $(".listProduct");
   listProduct.innerHTML = " ";
@@ -74,16 +76,17 @@ listProduct.addEventListener("click", (event) => {
   if (target.classList.contains("img__delete__product")) {
     toggleElenment(blockDeleteProduct, "active");
     const deleteButton = $(".btn__deletePoduct");
+
     deleteButton.addEventListener("click", () => {
       const productRow = target.closest("tr");
-      const index = Array.from(productRow.parentNode.children).indexOf(
-        productRow
-      );
+      const index = Array.from(productRow.parentNode.children).indexOf(productRow);
       deleteProduct(listProducts, index);
       toggleElenment(blockDeleteProduct, "active");
     });
   }
 });
+
+
 
 function deleteProduct(listProducts, i) {
   listProducts.splice(i, 1);
@@ -173,6 +176,7 @@ const editIcons = document.querySelectorAll(".img__edit");
 editIcons.forEach((editIcon, index) => {
   editIcon.addEventListener("click", () => {
     editProduct(index);
+    window.scrollTo(0, 0);
   });
 });
 

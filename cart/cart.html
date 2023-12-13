@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Fashion Task</title>
+    <link rel="icon" href="../assets/img/logo.svg" style="background-color: #000;">
     <!-- resset css -->
     <link rel="stylesheet" href="../assets/css/resset.css" />
     <!-- common -->
@@ -31,9 +32,9 @@
   <body>
     <header class="header">
       <div class="header__wrap content row">
-          <div class="logo">
+          <a class="logo" href="../home/index.html">
               <img src="../assets/img/logo.svg" alt="" class="logo_main">
-          </div>
+          </a>
           <div class="icon__dash">☰</div>
         <div class="header__main">
           <nav class="nav">
@@ -64,7 +65,10 @@
               <div class="user__wrap row">
                   <span class="user__name"></span>
                   <img src="../assets/img/user-Img.png" alt="" class="user__img">
-                  <a href="../cart/cart.html"><img src="../assets/img/img__cart.png" alt="" class="cart__img"></a>
+                  <a href="../cart/cart.html">
+                    <div class="cart-quantity"><span class="cart-quantity-text"></span></div>
+                    <img src="../assets/img/img__cart.png" alt="" class="cart__img">
+                  </a>      
                   <img src="../assets/img/signOut-icon.png" alt="" class="sign__out">
               </div>
           </div>
@@ -313,9 +317,12 @@
         <div class="footer__center">
           <span class="footer-setcity footer__right-list">HÀ NỘI</span>
           <div>
-            <span class="bold footer__right-list">Store 7:</span> 17bis Huỳnh
-            Đình Hai Phường 14 - Quận Bình Thạnh
-          </div>
+            <span class="bold footer__right-list bold footer__right-list-main">Store 7:</span> 
+            <div>17bis Huỳnh Đình Hai Phường 14 - Quận Bình Thạnh</div>
+            <a href="https://maps.app.goo.gl/s9gDSUJW9wrHKShE8" target="_blank">
+                <img src="../assets/img/googlemap.png" alt="Google Maps" width="30" height="30" style="margin-top: 5px;">
+            </a>
+        </div>
           <div class="block">
             <div class="footer-setadd footer__right-list">
               CHÍNH SÁCH ĐỔI TRẢ
@@ -339,7 +346,7 @@
               />
               028 7307 6464
             </span>
-            <span class="icon">
+            <span class="icon" style="margin-bottom: 5px;">
               <img
                 id="mail"
                 onclick="sendEmail()"

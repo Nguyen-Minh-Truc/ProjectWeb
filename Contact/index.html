@@ -18,10 +18,9 @@
     <!-- header -->
     <link rel="stylesheet" href="../assets/css/header.css" />
     <!-- container -->
-    <link rel="stylesheet" href="../Contact/container.css" />
+    <link rel="stylesheet" href="./css/container.css" />
     <!-- footer -->
     <link rel="stylesheet" href="../assets/css/footer.css" />
-    <link rel="stylesheet" href="./css/container.css" />
     <!-- reponsive -->
     <link rel="stylesheet" href="../assets/css/footerRenponsive.css">
     <link rel="stylesheet" href="../assets/css/headerReponsive.css">
@@ -30,51 +29,49 @@
   <body>
     <header class="header">
       <div class="header__wrap content row">
-        <div class="logo">
-          <img src="../assets/img/logo.svg" alt="" class="logo_main" />
-        </div>
-        <div class="nav">
-          <ul class="nav__container row">
-            <li class="nav__item">
-              <a href="../home/index.html" class="nav__item__link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="#!" class="nav__item__link nav__item__link--active"
-                >Contacts</a
-              >
-            </li>
-            <li class="nav__item">
-              <a href="../Admin/index.html" class="nav__item__link" id="admin"
-                >Management</a
-              >
-            </li>
-          </ul>
-        </div>
-        <!-- sign in -->
-        <div class="signIn">
-          <div class="signIn__wrap">
-            <div class="logIn">Log In</div>
-            <div class="signUp">
-              <button class="signUp__btn btn">Sign Up</button>
-            </div>
+          <a class="logo" href="../home/index.html">
+              <img src="../assets/img/logo.svg" alt="" class="logo_main">
+          </a>
+          <div class="icon__dash">☰</div>
+        <div class="header__main">
+          <nav class="nav">
+              <ul class="nav__container row">
+                  <li class="nav__item">
+                      <a href="../home/index.html" class="nav__item__link ">Home</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#!" class="nav__item__link nav__item__link--active">Contacts</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="../Admin/index.html" class="nav__item__link" id="admin">Management</a>
+                  </li>
+              </ul>
+          </nav>
+          <!-- sign in -->
+          <div class="signIn">
+              <div class="signIn__wrap">
+                  <div class="logIn">Log In</div>
+                  <div class="signUp">
+                      <button class="signUp__btn btn">
+                          Sign Up
+                      </button>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="user unactive">
-          <div class="user__wrap row">
-            <span class="user__name"></span>
-            <img src="../assets/img/user-Img.png" alt="" class="user__img" />
-            <a href="../cart/cart.html"
-              ><img src="../assets/img/img__cart.png" alt="" class="cart__img"
-            /></a>
-            <img
-              src="../assets/img/signOut-icon.png"
-              alt=""
-              class="sign__out"
-            />
+          <div class="user unactive">
+              <div class="user__wrap row">
+                  <span class="user__name"></span>
+                  <img src="../assets/img/user-Img.png" alt="" class="user__img">
+                  <a href="../cart/cart.html">
+                    <div class="cart-quantity"><span class="cart-quantity-text"></span></div>
+                    <img src="../assets/img/img__cart.png" alt="" class="cart__img">
+                  </a>         
+                  <img src="../assets/img/signOut-icon.png" alt="" class="sign__out">
+              </div>
           </div>
         </div>
       </div>
-    </header>
+  </header>
     <!-- block log in -->
     <div class="block__login unactive">
       <div class="block__login__wrap">
@@ -271,6 +268,7 @@
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
+            class="map"
             referrerpolicy="no-referrer-when-downgrade"
             >" height="40rem" width="80rem" frameborder="0"
             style="border:0"></iframe
@@ -314,9 +312,12 @@
         <div class="footer__center">
           <span class="footer-setcity footer__right-list">HÀ NỘI</span>
           <div>
-            <span class="bold footer__right-list">Store 7:</span> 17bis Huỳnh
-            Đình Hai Phường 14 - Quận Bình Thạnh
-          </div>
+            <span class="bold footer__right-list bold footer__right-list-main">Store 7:</span> 
+            <div>17bis Huỳnh Đình Hai Phường 14 - Quận Bình Thạnh</div>
+            <a href="https://maps.app.goo.gl/s9gDSUJW9wrHKShE8" target="_blank">
+                <img src="../assets/img/googlemap.png" alt="Google Maps" width="30" height="30" style="margin-top: 5px;">
+            </a>
+        </div>
           <div class="block">
             <div class="footer-setadd footer__right-list">
               CHÍNH SÁCH ĐỔI TRẢ
@@ -340,7 +341,7 @@
               />
               028 7307 6464
             </span>
-            <span class="icon">
+            <span class="icon" style="margin-bottom: 5px;">
               <img
                 id="mail"
                 onclick="sendEmail()"
@@ -445,5 +446,6 @@
         });
     </script>
     <script src="../assets/js/SignIn.js"></script>
+    <script src="../cart/cart.js"></script>
   </body>
 </html>

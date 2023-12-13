@@ -94,7 +94,7 @@ formSignUp.addEventListener("submit", (e) => {
   ) {
     return;
   } else {
-    if (true) {
+    if (testPhone(phone)) {
       if (pass === passConfirm) {
         const userExists = listUsers.some((user) => user.phone === phone);
         if (userExists) {
@@ -114,10 +114,12 @@ formSignUp.addEventListener("submit", (e) => {
           toggleElenment(blogSignUp, "active");
         }
       } else {
+        alert("Mật khẩu không khớp. ");
         document.getElementById("password__signup").style.borderColor = "red";
         document.getElementById("password__confirm").style.borderColor = "red";
       }
     } else {
+      alert("vui lòng nhập đúng số diện thoại. ")
       document.getElementById("phone__signup").style.borderColor = "red";
     }
   }
@@ -170,6 +172,7 @@ formLogIn.addEventListener("submit", (e) => {
 const btnSignIn = document.querySelector(".signIn");
 const user = document.querySelector(".user");
 const userName = document.querySelector(".user__name");
+
 function testLogin() {
   const name = JSON.parse(localStorage.getItem("name"));
   const testLogIn = name ? true : false;
@@ -238,4 +241,8 @@ main.addEventListener("click", (e) => {
     blockLogOut.classList.remove("active");
   }
 });
+
+
+
+
 

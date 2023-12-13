@@ -71,6 +71,9 @@
 .user__wrap {
     gap: 1rem;
 }
+.user__wrap a {
+    position: relative;
+}
 .user__name {
     color: #fff;
 }
@@ -174,4 +177,22 @@
 }
 .btn__cancle:hover {
     background-color: #ccc;
+}
+.cart-quantity {
+    display: none;
+    background-color: red;
+    height: 15px;
+    width: 17px;
+    border-radius: 50%;
+    position: absolute;
+    right: -5px;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-quantity-text{
+    color: white;
+    font-weight: 300;
+    font-size: small;
 }

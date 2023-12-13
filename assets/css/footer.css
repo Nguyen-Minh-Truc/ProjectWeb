@@ -37,6 +37,7 @@
 .footer-setadd {
     font-weight: 600;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 .footer-setadd:hover {
     opacity: 0.5;
@@ -47,6 +48,9 @@
     justify-content: space-between;
     flex-direction: column;
     gap: 1.5rem;
+}
+.footer__right-list-main {
+    margin-bottom: 5px;
 }
 .follow-us-icon{
     display: flex;
@@ -60,4 +64,7 @@
     justify-content: center;
     font-weight: 800;
     padding-bottom: 3rem;
+}
+.icon {
+    margin-right: 15px;
 }
