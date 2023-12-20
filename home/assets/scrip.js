@@ -1,8 +1,6 @@
 import { listProductData } from "../../data/listProduct.js";
 
-const listProducts =
-  JSON.parse(localStorage.getItem("listProducts")) || listProductData;
-
+const listProducts = JSON.parse(localStorage.getItem("listProducts")) || listProductData;
 function createListProduct(listProducts) {
   const container = document.querySelector(".list__product__container");
   container.innerHTML = ""; // Clear container first
@@ -18,15 +16,15 @@ function createListProduct(listProducts) {
   container.innerHTML = productItems.join("");
   phanTrang();
 }
+createListProduct(listProducts);
 
 
-// Function to handle product item click
 function handleProductItemClick(productID) {
   const result = listProducts.filter((product) => product.id == productID);
-
   if (result.length > 0) {
     productInfo.classList.add("active");
     productInfo.classList.remove("unactive");
+
     document.getElementById("imgbig").src = result[0].url;
     document.getElementById("productname").innerHTML = result[0].name;
     document.getElementById("productprice").innerHTML =  `${result[0].price}$`;
@@ -42,7 +40,6 @@ function handleProductItemClick(productID) {
   }
 }
 
-// Event delegation for product item click
 document.querySelector(".list__product__container").addEventListener("click", (event) => {
   const clickedElement = event.target;
   if (clickedElement.classList.contains("product__item")) {
@@ -52,9 +49,7 @@ document.querySelector(".list__product__container").addEventListener("click", (e
 });
 
 
-createListProduct(listProducts);
 const itemMenu = document.querySelectorAll(".item__menu");
-
 itemMenu.forEach((item) => {
   item.addEventListener("click", () => {
     itemMenu.forEach((menuItem) => {
@@ -63,14 +58,7 @@ itemMenu.forEach((item) => {
     item.classList.add("item__menu__active");
   });
 });
-
-function chuyenChuoiInHoaKhongDau(chuoi) {
-  return chuoi
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-}
-
+// tìm kiếm theo top menu
 itemMenu.forEach((item) => {
   item.addEventListener("click", () => {
     const keyWord = chuyenChuoiInHoaKhongDau(item.textContent);
@@ -80,11 +68,8 @@ itemMenu.forEach((item) => {
       createListProduct(listProducts);
       phanTrang();
       displayProducts(1);
-      document.querySelector('.suggest-product-list').innerHTML = "";
-      listSuggest.style.border = 'none';
       return;
     }
-
     listProducts.forEach((product) => {
       const productType = chuyenChuoiInHoaKhongDau(product.name);
       if (productType.indexOf(keyWord) !== -1) {
@@ -99,6 +84,13 @@ itemMenu.forEach((item) => {
     listSuggest.style.border = 'none';
   });
 });
+// chuyển chuổi
+function chuyenChuoiInHoaKhongDau(chuoi) {
+  return chuoi
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
 // search input
 const searchInput = document.getElementById("search__product");
 const listSuggest = document.querySelector('.suggest-product-list');
@@ -123,7 +115,6 @@ function suggest(listProduct) {
 searchInput.addEventListener("input", function () {
   const searchTerm = chuyenChuoiInHoaKhongDau(searchInput.value);
   const listProductResult = [];
-
   if (!searchTerm) {
     createListProduct(listProducts);
     addClickEventToProducts();
@@ -188,6 +179,9 @@ searchResults.addEventListener("click", () => {
 
 const productInfo = document.querySelector("#productInfo");
 
+
+
+
 function addClickEventToProducts() {
   const callBlocks = document.querySelectorAll(".product__item");
   callBlocks.forEach((item) => {
@@ -228,7 +222,6 @@ function addClickEventToProducts() {
 addClickEventToProducts();
 function addClickEventToProducts1() {
   const callBlocks = document.querySelectorAll(".suggest-product");
-
   callBlocks.forEach((item) => {
     item.addEventListener("click", () => {
       const productID = item.id;
@@ -284,8 +277,8 @@ increaseButton.addEventListener("click", () => {
 
 // phan trang
 let currentPage = 1; 
-function phanTrang() {
-const itemsPerPage = 9; 
+function phanTrang(){
+  const itemsPerPage = 9; 
   let totalPages = Math.ceil(listProducts.length / itemsPerPage);
   const pages = document.querySelector('.page')
   pages.innerHTML = '';
@@ -309,8 +302,6 @@ const itemsPerPage = 9;
 }
 
 
-// console.log(totalPages)
-
 function displayProducts(currentPage) {
   const itemsPerPage = 9; 
   const listProduct = document.querySelectorAll(".product__item")
@@ -323,23 +314,6 @@ function displayProducts(currentPage) {
   addClickEventToProducts();
 }
 displayProducts(currentPage)
-
-
-// document.querySelector(".btn__page_2").addEventListener('click', ()=> {
-//   currentPage = 2
-//   displayProducts(currentPage)
-//   document.querySelector(".btn__page_1").classList.remove("btn__page__active")
-//   document.querySelector(".btn__page_2").classList.add("btn__page__active")
-  
-// })
-
-// document.querySelector(".btn__page_1").addEventListener('click', ()=> {
-//   currentPage = 1
-//   displayProducts(currentPage)
-//   document.querySelector(".btn__page_2").classList.remove("btn__page__active")
-//   document.querySelector(".btn__page_1").classList.add("btn__page__active")
-// })
-
 function phanTrang1(listProduct) {
   const itemsPerPage = 9; 
     let totalPages = Math.ceil(listProduct.length / itemsPerPage);
